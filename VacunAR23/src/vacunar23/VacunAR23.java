@@ -21,13 +21,15 @@ public class VacunAR23 {
     public static void main(String[] args) {
         //Conexion conex = new Conexion();
         
-        Ciudadano citizen = new Ciudadano(42266409, "Mariana", "Delfos", "marianadelfos@gmail.com", "150596690", "Covid", 25, "Mariana Delfos");
+        Ciudadano citizen = new Ciudadano(40255063, "Darío", "Sergi", "dsergi@gamil.com", "155550630", "Ninguna", "Bombero", 25, true);
         CiudadanoData ciuData = new CiudadanoData();
         
         //conex.Conexion_Maria();
         //ciuData.guardarCiudadano(citizen);
         //ciuData.buscarCiudadanoPorDni(39266240);
         ciuData.listarCiudadanos();
+        //ciuData.modificarCiudadano(citizen, 42266409);
+        //ciuData.eliminarCiudadano(22403720, true);
     }
     
 }
