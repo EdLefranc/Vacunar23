@@ -26,7 +26,8 @@ public class VacunAR23 {
         
         //conex.Conexion_Maria();
         //ciuData.guardarCiudadano(citizen);
-        ciuData.buscarCiudadanoPorDni(39266240);
+        //ciuData.buscarCiudadanoPorDni(39266240);
+        ciuData.listarCiudadanos();
     }
     
 }

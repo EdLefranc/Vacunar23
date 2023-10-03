@@ -52,40 +52,67 @@ public class CiudadanoData {
     
     
     public Ciudadano buscarCiudadanoPorDni(int dni) {
-    Ciudadano citizen = null;
-    String sql = "SELECT * FROM ciudadano WHERE dni=?";
-    PreparedStatement ps = null;
+        Ciudadano citizen = null;
+        String sql = "SELECT * FROM ciudadano WHERE dni=?";
+        PreparedStatement ps = null;
 
-    try {
-        ps = conex.Conexion_Maria().prepareStatement(sql);
-        ps.setInt(1, dni);
-        ResultSet rs = ps.executeQuery();
+        try {
+            ps = conex.Conexion_Maria().prepareStatement(sql);
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
 
-        if (rs.next()) {
-            citizen = new Ciudadano();
-            citizen.setDni(rs.getInt("dni"));
-            citizen.setNombre(rs.getString("nombre"));
-            citizen.setApellido(rs.getString("apellido"));
-            citizen.setEmail(rs.getString("email"));
-            citizen.setCelular(rs.getString("celular"));
-            citizen.setPatologia(rs.getString("patologia"));
-            citizen.setOcupacion(rs.getString("ocupacion"));
-            citizen.setEdad(rs.getInt("edad"));
-            citizen.setResponsableLegal(rs.getString("responsableLegal"));
-            System.out.println(citizen);
+            if (rs.next()) {
+                citizen = new Ciudadano();
+                citizen.setDni(rs.getInt("dni"));
+                citizen.setNombre(rs.getString("nombre"));
+                citizen.setApellido(rs.getString("apellido"));
+                citizen.setEmail(rs.getString("email"));
+                citizen.setCelular(rs.getString("celular"));
+                citizen.setPatologia(rs.getString("patologia"));
+                citizen.setOcupacion(rs.getString("ocupacion"));
+                citizen.setEdad(rs.getInt("edad"));
+                citizen.setResponsableLegal(rs.getString("responsableLegal"));
+                System.out.println(citizen);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ciudadano " + ex.getMessage());
+            System.out.println("Error: " + ex);
         }
-        ps.close();
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ciudadano " + ex.getMessage());
-        System.out.println("Error: " + ex);
+        return citizen;
     }
-    return citizen;
-}
 
     
     
     public List<Ciudadano> listarCiudadanos(){
-        return null;
+        List<Ciudadano> ciudadanos = new ArrayList<>();
+        try {
+        String sql = "SELECT * FROM ciudadano";
+            try (PreparedStatement ps = conex.Conexion_Maria().prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    Ciudadano citizen = new Ciudadano();
+                                        
+                    citizen.setDni(rs.getInt("dni"));                    
+                    citizen.setNombre(rs.getString("nombre"));                    
+                    citizen.setApellido(rs.getString("apellido"));
+                    citizen.setEmail(rs.getString("email"));
+                    citizen.setCelular(rs.getString("celular"));
+                    citizen.setPatologia(rs.getString("patologia"));
+                    citizen.setOcupacion(rs.getString("ocupacion"));
+                    citizen.setEdad(rs.getInt("edad"));
+                    citizen.setResponsableLegal(rs.getString("responsableLegal"));
+                    
+                    ciudadanos.add(citizen);
+                }
+                
+            }        
+        
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ciudadano "+ex.getMessage());
+        }
+        System.out.println("Lista de ciudadanos:\n" + ciudadanos);
+        return ciudadanos;
         
     }
     public void modificarCiudadano(){
