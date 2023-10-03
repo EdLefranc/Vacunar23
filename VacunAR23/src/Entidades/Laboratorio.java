@@ -1,14 +1,81 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Entidades;
 
-/**
- *
- * @author Ed Le Franc
- */
+
 public class Laboratorio {
+    
+    private int cuitLaboratorio;
+    private String nombreLab;
+    private String pais;
+    private String domComercial;
+    private String mail;
+    private int telefono;
+
+    public Laboratorio() {
+    }
+
+    public Laboratorio(int cuitLaboratorio, String nombreLab, String pais, String domComercial, String mail, int telefono) {
+        this.cuitLaboratorio = cuitLaboratorio;
+        this.nombreLab = nombreLab;
+        this.pais = pais;
+        this.domComercial = domComercial;
+        this.mail = mail;
+        this.telefono = telefono;
+    }
+
+    public int getCuitLaboratorio() {
+        return cuitLaboratorio;
+    }
+
+    public void setCuitLaboratorio(int cuitLaboratorio) {
+        this.cuitLaboratorio = cuitLaboratorio;
+    }
+
+    public String getNombreLab() {
+        return nombreLab;
+    }
+
+    public void setNombreLab(String nombreLab) {
+        this.nombreLab = nombreLab;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getDomComercial() {
+        return domComercial;
+    }
+
+    public void setDomComercial(String domComercial) {
+        this.domComercial = domComercial;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Laboratorio{" + "cuitLaboratorio=" + cuitLaboratorio + ", nombreLab=" + nombreLab + ", pais=" + pais + ", domComercial=" + domComercial + ", mail=" + mail + ", telefono=" + telefono + '}';
+    }
+    
+    
     
 }
