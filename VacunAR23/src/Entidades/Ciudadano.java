@@ -19,11 +19,12 @@ public class Ciudadano {
     private String ocupacion;
     private int edad;
     private String responsableLegal;
+    private boolean estado;
 
     public Ciudadano() {
     }
 
-    public Ciudadano(int dni, String nombre, String apellido, String email, String celular, String patologia, int edad, String responsableLegal) {
+    public Ciudadano(int dni, String nombre, String apellido, String email, String celular, String patologia, int edad, String responsableLegal, boolean estado) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -32,9 +33,10 @@ public class Ciudadano {
         this.patologia = patologia;
         this.edad = edad;
         this.responsableLegal = responsableLegal;
+        this.estado = estado;
     }
 
-    public Ciudadano(int dni, String nombre, String apellido, String email, String celular, String patologia, String ocupacion, int edad) {
+    public Ciudadano(int dni, String nombre, String apellido, String email, String celular, String patologia, String ocupacion, int edad, boolean estado) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -43,6 +45,15 @@ public class Ciudadano {
         this.patologia = patologia;
         this.ocupacion = ocupacion;
         this.edad = edad;
+        this.estado = estado;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     public int getDni() {
