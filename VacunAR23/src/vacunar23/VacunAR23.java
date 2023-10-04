@@ -36,7 +36,7 @@ public class VacunAR23 {
         //ciuData.modificarCiudadano(citizen, 42266409);
         //ciuData.eliminarCiudadano(22403720, true);
         //labData.guardarLaboratorio(lab);
-        labData.listarLaboratorios();
+        //labData.listarLaboratorios();
     }
     
 }

@@ -5,7 +5,6 @@
  */
 package AccesoADatos;
 
-import Entidades.Ciudadano;
 import Entidades.Laboratorio;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
