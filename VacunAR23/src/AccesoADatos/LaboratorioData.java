@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -74,5 +76,33 @@ public class LaboratorioData {
         }
         return lab;
     }
+    
+    public List<Laboratorio> listarLaboratorios() {
+        List<Laboratorio> labs = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM laboratorio ORDER BY nombreLab ASC";
+            try (PreparedStatement ps = conex.Conexion_Maria().prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    Laboratorio lab = new Laboratorio();
+
+                    lab.setCuitLaboratorio(rs.getInt("cuitLaboratorio"));
+                    lab.setNombreLab(rs.getString("nombreLab"));
+                    lab.setPais(rs.getString("pais"));
+                    lab.setDomComercial(rs.getString("domComercial"));
+                    lab.setMail(rs.getString("mail"));
+                    lab.setTelefono(rs.getString("telefono"));
+
+                    labs.add(lab);
+                }
+            }
+        } catch (SQLException ex) {
+            // JOptionPane.showMessageDialog(null, "Error al acceder a la tabla laboratorio " + ex.getMessage());
+            System.out.println("Error al acceder a la tabla laboratorio " + ex.getMessage());
+        }
+        System.out.println("Lista de laboratorios:\n" + labs);
+        return labs;
+    }
+
     
 }
