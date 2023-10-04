@@ -9,12 +9,12 @@ public class Laboratorio {
     private String pais;
     private String domComercial;
     private String mail;
-    private int telefono;
+    private String telefono;
 
     public Laboratorio() {
     }
 
-    public Laboratorio(int cuitLaboratorio, String nombreLab, String pais, String domComercial, String mail, int telefono) {
+    public Laboratorio(int cuitLaboratorio, String nombreLab, String pais, String domComercial, String mail, String telefono) {
         this.cuitLaboratorio = cuitLaboratorio;
         this.nombreLab = nombreLab;
         this.pais = pais;
@@ -63,17 +63,19 @@ public class Laboratorio {
         this.mail = mail;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
     @Override
     public String toString() {
-        return "Laboratorio{" + "cuitLaboratorio=" + cuitLaboratorio + ", nombreLab=" + nombreLab + ", pais=" + pais + ", domComercial=" + domComercial + ", mail=" + mail + ", telefono=" + telefono + '}';
+        return "| Laboratorio: " + " | cuitLaboratorio: " + cuitLaboratorio + "| nombreLab: " + nombreLab + "| pais=" + pais
+                + "\n| domComercial: " + domComercial + "| mail:" + mail + "| telefono:" + telefono 
+                + " |\n---------------------------------------------------\n";
     }
     
     
