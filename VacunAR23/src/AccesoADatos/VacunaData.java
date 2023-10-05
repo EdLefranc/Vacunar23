@@ -10,11 +10,7 @@ import javax.swing.JOptionPane;
 public class VacunaData {
 
     Conexion conex = new Conexion();
-
-    //INSERT INTO `vacuna`(`nroSerieDosis`, `cuitLaboratorio`, `nombreVacuna`, `marca`, `medida`, `vencimiento`, `aplicacion`)
-    //VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
-    //INSERT INTO `vacuna` (`nroSerieDosis`, `cuitLaboratorio`, `nombreVacuna`, `marca`, `medida`, `vencimiento`, `aplicacion`)
-    //VALUES ('252341', '3688547', 'Resfrianex', 'AlivioTotal', '0.9', '2026-05-05', '1');
+    
     public void guardarVacuna(Vacuna vacuna) {
         String sql = "INSERT INTO `vacuna`(`nroSerieDosis`, `cuitLaboratorio`, `nombreVacuna`, `marca`, `medida`, `vencimiento`, `aplicacion`) VALUES (?,?,?,?,?,?,?)";
 

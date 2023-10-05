@@ -5,20 +5,30 @@
  */
 package Vistas;
 
-/**
- *
- * @author Ed Le Franc
- */
+import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
+
+
 public class VacunarGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form VacunarGUI
      */
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public VacunarGUI() {
         initComponents();
         setLocationRelativeTo(null);
+        ocultarIFrames();
     }
-
+    
+    public void ocultarIFrames(){
+        IF_Paciente.setVisible(false);
+        IF_Laboratorio.setVisible(false);
+        IF_Vacuna.setVisible(false);
+        IF_Admin.setVisible(false);
+        IF_Consultas.setVisible(false);
+        IF_Ayuda.setVisible(false);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,152 +43,231 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Vacuna = new javax.swing.JInternalFrame();
         IF_Admin = new javax.swing.JInternalFrame();
         IF_Consultas = new javax.swing.JInternalFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         IF_Ayuda = new javax.swing.JInternalFrame();
         jMenuBar1 = new javax.swing.JMenuBar();
         JM_Paciente = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        MI_Paciente = new javax.swing.JMenuItem();
         JM_Laboratorio = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MI_lab = new javax.swing.JMenuItem();
         JM_Vacuna = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        MI_Vac = new javax.swing.JMenuItem();
         JM_Admin = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        MI_Turno = new javax.swing.JMenuItem();
+        MI_ModTurno = new javax.swing.JMenuItem();
         JM_Consultas = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        MI_Turnos = new javax.swing.JMenuItem();
+        MI_Labs = new javax.swing.JMenuItem();
+        MI_StockVac = new javax.swing.JMenuItem();
         JM_Temas = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        MI_Noche = new javax.swing.JMenuItem();
+        MI_Dia = new javax.swing.JMenuItem();
         JM_Ayuda = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        MI_Ayuda = new javax.swing.JMenuItem();
         JM_Salir = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        MI_Salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 700));
+        setPreferredSize(new java.awt.Dimension(1000, 690));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         IF_Paciente.setClosable(true);
         IF_Paciente.setTitle("Paciente");
         IF_Paciente.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Paciente.setVisible(true);
-        IF_Paciente.getContentPane().setLayout(new java.awt.FlowLayout());
+        IF_Paciente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(IF_Paciente);
 
         IF_Laboratorio.setClosable(true);
         IF_Laboratorio.setTitle("Laboratorio");
         IF_Laboratorio.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Laboratorio.setVisible(true);
-        IF_Laboratorio.getContentPane().setLayout(new java.awt.FlowLayout());
+        IF_Laboratorio.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(IF_Laboratorio);
 
         IF_Vacuna.setClosable(true);
         IF_Vacuna.setTitle("Vacuna");
         IF_Vacuna.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Vacuna.setVisible(true);
-        IF_Vacuna.getContentPane().setLayout(new java.awt.FlowLayout());
+        IF_Vacuna.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(IF_Vacuna);
 
         IF_Admin.setClosable(true);
         IF_Admin.setTitle("Administración");
         IF_Admin.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Admin.setVisible(true);
-        IF_Admin.getContentPane().setLayout(new java.awt.FlowLayout());
+        IF_Admin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(IF_Admin);
 
         IF_Consultas.setClosable(true);
         IF_Consultas.setTitle("Consultas");
-        IF_Consultas.setPreferredSize(new java.awt.Dimension(870, 680));
+        IF_Consultas.setMinimumSize(new java.awt.Dimension(870, 680));
+        IF_Consultas.setPreferredSize(new java.awt.Dimension(870, 690));
         IF_Consultas.setVisible(true);
-        IF_Consultas.getContentPane().setLayout(new java.awt.FlowLayout());
+        IF_Consultas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CONSULTAS");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setMaximumSize(new java.awt.Dimension(200, 100));
+        jLabel1.setPreferredSize(new java.awt.Dimension(200, 100));
+        IF_Consultas.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 240, 80));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        IF_Consultas.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 760, 320));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setText("STOCK VACUNAS");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        IF_Consultas.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 160, 60));
+
         getContentPane().add(IF_Consultas);
 
         IF_Ayuda.setClosable(true);
         IF_Ayuda.setTitle("Ayuda");
         IF_Ayuda.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Ayuda.setVisible(true);
-        IF_Ayuda.getContentPane().setLayout(new java.awt.FlowLayout());
+        IF_Ayuda.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(IF_Ayuda);
 
-        jMenuBar1.setAlignmentX(5.0F);
+        jMenuBar1.setAlignmentX(0.0F);
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(632, 35));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(682, 35));
 
         JM_Paciente.setText("Paciente");
         JM_Paciente.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem1.setText("Paciente");
-        JM_Paciente.add(jMenuItem1);
+        MI_Paciente.setText("Paciente");
+        MI_Paciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_PacienteActionPerformed(evt);
+            }
+        });
+        JM_Paciente.add(MI_Paciente);
 
         jMenuBar1.add(JM_Paciente);
 
         JM_Laboratorio.setText("Laboratorio");
         JM_Laboratorio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem2.setText("Laboratorio");
-        JM_Laboratorio.add(jMenuItem2);
+        MI_lab.setText("Laboratorio");
+        MI_lab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_labActionPerformed(evt);
+            }
+        });
+        JM_Laboratorio.add(MI_lab);
 
         jMenuBar1.add(JM_Laboratorio);
 
         JM_Vacuna.setText("Vacuna");
         JM_Vacuna.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem3.setText("Vacuna");
-        JM_Vacuna.add(jMenuItem3);
+        MI_Vac.setText("Vacuna");
+        MI_Vac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_VacActionPerformed(evt);
+            }
+        });
+        JM_Vacuna.add(MI_Vac);
 
         jMenuBar1.add(JM_Vacuna);
 
         JM_Admin.setText("Administración");
         JM_Admin.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem4.setText("Adjudicar Turnos");
-        JM_Admin.add(jMenuItem4);
+        MI_Turno.setText("Adjudicar Turnos");
+        MI_Turno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_TurnoActionPerformed(evt);
+            }
+        });
+        JM_Admin.add(MI_Turno);
 
-        jMenuItem5.setText("Modificación de Turnos");
-        JM_Admin.add(jMenuItem5);
+        MI_ModTurno.setText("Modificación de Turnos");
+        MI_ModTurno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_ModTurnoActionPerformed(evt);
+            }
+        });
+        JM_Admin.add(MI_ModTurno);
 
         jMenuBar1.add(JM_Admin);
 
         JM_Consultas.setText("Consultas");
         JM_Consultas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem6.setText("Turnos por Paciente");
-        JM_Consultas.add(jMenuItem6);
+        MI_Turnos.setText("Turnos por Paciente");
+        MI_Turnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_TurnosActionPerformed(evt);
+            }
+        });
+        JM_Consultas.add(MI_Turnos);
 
-        jMenuItem7.setText("Listado de Laboratorios");
-        JM_Consultas.add(jMenuItem7);
+        MI_Labs.setText("Listado de Laboratorios");
+        MI_Labs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_LabsActionPerformed(evt);
+            }
+        });
+        JM_Consultas.add(MI_Labs);
 
-        jMenuItem8.setText("Stock de Vacunas");
-        JM_Consultas.add(jMenuItem8);
+        MI_StockVac.setText("Stock de Vacunas");
+        MI_StockVac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_StockVacActionPerformed(evt);
+            }
+        });
+        JM_Consultas.add(MI_StockVac);
 
         jMenuBar1.add(JM_Consultas);
 
         JM_Temas.setText("Temas");
         JM_Temas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem9.setText("Noche");
-        JM_Temas.add(jMenuItem9);
+        MI_Noche.setText("Noche");
+        JM_Temas.add(MI_Noche);
 
-        jMenuItem10.setText("Día");
-        JM_Temas.add(jMenuItem10);
+        MI_Dia.setText("Día");
+        JM_Temas.add(MI_Dia);
 
         jMenuBar1.add(JM_Temas);
 
         JM_Ayuda.setText("Ayuda");
         JM_Ayuda.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem11.setText("Información");
-        JM_Ayuda.add(jMenuItem11);
+        MI_Ayuda.setText("Información");
+        MI_Ayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_AyudaActionPerformed(evt);
+            }
+        });
+        JM_Ayuda.add(MI_Ayuda);
 
         jMenuBar1.add(JM_Ayuda);
 
         JM_Salir.setText("Salir");
         JM_Salir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        jMenuItem12.setText("Salir del programa");
-        JM_Salir.add(jMenuItem12);
+        MI_Salir.setText("Salir del programa");
+        JM_Salir.add(MI_Salir);
 
         jMenuBar1.add(JM_Salir);
 
@@ -187,33 +276,58 @@ public class VacunarGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MI_PacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_PacienteActionPerformed
+        ocultarIFrames();
+        IF_Paciente.setVisible(true);
+    }//GEN-LAST:event_MI_PacienteActionPerformed
+
+    private void MI_labActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_labActionPerformed
+        ocultarIFrames();
+        IF_Laboratorio.setVisible(true);
+    }//GEN-LAST:event_MI_labActionPerformed
+
+    private void MI_VacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_VacActionPerformed
+        ocultarIFrames();
+        IF_Vacuna.setVisible(true);
+    }//GEN-LAST:event_MI_VacActionPerformed
+
+    private void MI_TurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_TurnoActionPerformed
+        ocultarIFrames();
+        IF_Admin.setVisible(true);
+    }//GEN-LAST:event_MI_TurnoActionPerformed
+
+    private void MI_ModTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_ModTurnoActionPerformed
+        ocultarIFrames();
+        IF_Admin.setVisible(true);
+    }//GEN-LAST:event_MI_ModTurnoActionPerformed
+
+    private void MI_TurnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_TurnosActionPerformed
+        ocultarIFrames();
+        IF_Consultas.setVisible(true);
+    }//GEN-LAST:event_MI_TurnosActionPerformed
+
+    private void MI_LabsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_LabsActionPerformed
+        ocultarIFrames();
+        IF_Consultas.setVisible(true);
+    }//GEN-LAST:event_MI_LabsActionPerformed
+
+    private void MI_StockVacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_StockVacActionPerformed
+        ocultarIFrames();
+        IF_Consultas.setVisible(true);
+    }//GEN-LAST:event_MI_StockVacActionPerformed
+
+    private void MI_AyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_AyudaActionPerformed
+        ocultarIFrames();
+        IF_Ayuda.setVisible(true);
+    }//GEN-LAST:event_MI_AyudaActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VacunarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VacunarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VacunarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VacunarGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
+        
+        FlatCarbonIJTheme.setup();
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -237,18 +351,22 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Salir;
     private javax.swing.JMenu JM_Temas;
     private javax.swing.JMenu JM_Vacuna;
+    private javax.swing.JMenuItem MI_Ayuda;
+    private javax.swing.JMenuItem MI_Dia;
+    private javax.swing.JMenuItem MI_Labs;
+    private javax.swing.JMenuItem MI_ModTurno;
+    private javax.swing.JMenuItem MI_Noche;
+    private javax.swing.JMenuItem MI_Paciente;
+    private javax.swing.JMenuItem MI_Salir;
+    private javax.swing.JMenuItem MI_StockVac;
+    private javax.swing.JMenuItem MI_Turno;
+    private javax.swing.JMenuItem MI_Turnos;
+    private javax.swing.JMenuItem MI_Vac;
+    private javax.swing.JMenuItem MI_lab;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
