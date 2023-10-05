@@ -8,8 +8,11 @@ package vacunar23;
 import AccesoADatos.CiudadanoData;
 import AccesoADatos.Conexion;
 import AccesoADatos.LaboratorioData;
+import AccesoADatos.VacunaData;
 import Entidades.Ciudadano;
 import Entidades.Laboratorio;
+import Entidades.Vacuna;
+import java.time.LocalDate;
 
 /**
  *
@@ -26,8 +29,11 @@ public class VacunAR23 {
         Ciudadano citizen = new Ciudadano(40255063, "Darío", "Sergi", "dsergi@gamil.com", "155550630", "Ninguna", "Bombero", 25, true);
         CiudadanoData ciuData = new CiudadanoData();
         
-        Laboratorio lab = new Laboratorio(285006038, "GoldLabs", "Canadá", "+1 Rob Carlson 793 Mo", "goldlabs.center@glabs.com", "+923622804");
-        LaboratorioData labData = new LaboratorioData();
+        //Laboratorio lab = new Laboratorio(285006038, "GoldLabs", "Canadá", "+1 Rob Carlson 793 Mo", "goldlabs.center@glabs.com", "+923622804");
+        //LaboratorioData labData = new LaboratorioData();
+        LocalDate fecha = LocalDate.of(2026, 8, 15);
+        Vacuna vacu = new Vacuna(64851, 3688547, "AliviarDolor", "FocusLab", 0.5, fecha, true);
+        VacunaData vacudata = new VacunaData();
         
         //conex.Conexion_Maria();
         //ciuData.guardarCiudadano(citizen);
@@ -37,6 +43,9 @@ public class VacunAR23 {
         //ciuData.eliminarCiudadano(22403720, true);
         //labData.guardarLaboratorio(lab);
         //labData.listarLaboratorios();
+        //vacudata.guardarVacuna(vacu);
+        vacudata.obtenervacuna(64851);
+        
     }
     
 }
