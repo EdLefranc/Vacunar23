@@ -103,5 +103,34 @@ public class LaboratorioData {
         return labs;
     }
 
-    
+    public void modificarLaboratorio(Laboratorio lab, int cuitLaboratorio) {
+        String sql = "UPDATE laboratorio SET cuitLaboratorio = ?, nombreLab = ?, pais = ?, domComercial = ?, mail = ?, telefono = ? WHERE cuitLaboratorio = ?";
+        PreparedStatement ps = null;
+
+        try {
+            ps = conex.Conexion_Maria().prepareStatement(sql);
+            ps.setInt(1, lab.getCuitLaboratorio());
+            ps.setString(2, lab.getNombreLab());
+            ps.setString(3, lab.getPais());
+            ps.setString(4, lab.getDomComercial());
+            ps.setString(5, lab.getMail());
+            ps.setString(6, lab.getTelefono());
+
+            // Aquí solo se necesita configurar el parámetro una vez en la cláusula WHERE
+            ps.setInt(7, cuitLaboratorio);
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Laboratorio modificado Exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "El laboratorio no existe en los datos");
+            }
+
+        } catch (SQLException ex) {
+            // JOptionPane.showMessageDialog(null, "Error al acceder a la tabla laboratorio " + ex.getMessage());
+            System.out.println("Error: " + ex);
+        } 
+    }
+
 }
