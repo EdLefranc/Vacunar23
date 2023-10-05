@@ -34,7 +34,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Admin = new javax.swing.JInternalFrame();
         IF_Consultas = new javax.swing.JInternalFrame();
         IF_Ayuda = new javax.swing.JInternalFrame();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuFlotante = new javax.swing.JMenuBar();
         JM_Paciente = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         JM_Laboratorio = new javax.swing.JMenu();
@@ -102,9 +102,9 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Ayuda.getContentPane().setLayout(new java.awt.FlowLayout());
         getContentPane().add(IF_Ayuda);
 
-        jMenuBar1.setAlignmentX(5.0F);
-        jMenuBar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(632, 35));
+        MenuFlotante.setAlignmentX(5.0F);
+        MenuFlotante.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        MenuFlotante.setPreferredSize(new java.awt.Dimension(632, 35));
 
         JM_Paciente.setText("Paciente");
         JM_Paciente.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -112,7 +112,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem1.setText("Paciente");
         JM_Paciente.add(jMenuItem1);
 
-        jMenuBar1.add(JM_Paciente);
+        MenuFlotante.add(JM_Paciente);
 
         JM_Laboratorio.setText("Laboratorio");
         JM_Laboratorio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -120,7 +120,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem2.setText("Laboratorio");
         JM_Laboratorio.add(jMenuItem2);
 
-        jMenuBar1.add(JM_Laboratorio);
+        MenuFlotante.add(JM_Laboratorio);
 
         JM_Vacuna.setText("Vacuna");
         JM_Vacuna.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -128,7 +128,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem3.setText("Vacuna");
         JM_Vacuna.add(jMenuItem3);
 
-        jMenuBar1.add(JM_Vacuna);
+        MenuFlotante.add(JM_Vacuna);
 
         JM_Admin.setText("Administración");
         JM_Admin.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -139,7 +139,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem5.setText("Modificación de Turnos");
         JM_Admin.add(jMenuItem5);
 
-        jMenuBar1.add(JM_Admin);
+        MenuFlotante.add(JM_Admin);
 
         JM_Consultas.setText("Consultas");
         JM_Consultas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -153,7 +153,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem8.setText("Stock de Vacunas");
         JM_Consultas.add(jMenuItem8);
 
-        jMenuBar1.add(JM_Consultas);
+        MenuFlotante.add(JM_Consultas);
 
         JM_Temas.setText("Temas");
         JM_Temas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -164,7 +164,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem10.setText("Día");
         JM_Temas.add(jMenuItem10);
 
-        jMenuBar1.add(JM_Temas);
+        MenuFlotante.add(JM_Temas);
 
         JM_Ayuda.setText("Ayuda");
         JM_Ayuda.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -172,7 +172,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem11.setText("Información");
         JM_Ayuda.add(jMenuItem11);
 
-        jMenuBar1.add(JM_Ayuda);
+        MenuFlotante.add(JM_Ayuda);
 
         JM_Salir.setText("Salir");
         JM_Salir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -180,9 +180,9 @@ public class VacunarGUI extends javax.swing.JFrame {
         jMenuItem12.setText("Salir del programa");
         JM_Salir.add(jMenuItem12);
 
-        jMenuBar1.add(JM_Salir);
+        MenuFlotante.add(JM_Salir);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuFlotante);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -237,7 +237,7 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Salir;
     private javax.swing.JMenu JM_Temas;
     private javax.swing.JMenu JM_Vacuna;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar MenuFlotante;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
