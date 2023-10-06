@@ -48,13 +48,16 @@ public class VacunarGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         IF_Paciente = new javax.swing.JInternalFrame();
+
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         JT_Ocupacion = new javax.swing.JTextField();
+
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+
         JT_DNI = new javax.swing.JTextField();
         JT_Nombre = new javax.swing.JTextField();
         JT_Email = new javax.swing.JTextField();
@@ -72,16 +75,67 @@ public class VacunarGUI extends javax.swing.JFrame {
         BTN_NuevoPaciente = new javax.swing.JButton();
         RB_EstadoPaciente = new javax.swing.JRadioButton();
         LB_EstadoPaciente = new javax.swing.JLabel();
+
         IF_Laboratorio = new javax.swing.JInternalFrame();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        JB_BuscarLaboratorio = new javax.swing.JButton();
+        JB_NuevoLaboratorio = new javax.swing.JButton();
+        JB_GuardarActualizarLaboratorio = new javax.swing.JButton();
+        JT_Cuit = new javax.swing.JTextField();
+        JT_NombreLaboratorio = new javax.swing.JTextField();
+        JT_Pais = new javax.swing.JTextField();
+        JT_DomicilioComercial = new javax.swing.JTextField();
+        JT_MailLaboratorio = new javax.swing.JTextField();
+        JT_TelefonoLaboratorio = new javax.swing.JTextField();
         IF_Vacuna = new javax.swing.JInternalFrame();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        JT_NumeroSerieVacuna = new javax.swing.JTextField();
+        JT_CuilLabVacuna = new javax.swing.JTextField();
+        JT_NombreVacuna = new javax.swing.JTextField();
+        JT_MarcaVacuna = new javax.swing.JTextField();
+        JT_MedidaAplicar = new javax.swing.JTextField();
+        JT_VencimientoLote = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
         IF_Admin = new javax.swing.JInternalFrame();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        JB_BuscarCita = new javax.swing.JButton();
+        JB_NuevaCita = new javax.swing.JButton();
+        JB_GuardarActualizarCita = new javax.swing.JButton();
+        JT_CodigoCita = new javax.swing.JTextField();
+        JT_Paciente = new javax.swing.JTextField();
+        JT_CodigoRefuerzo = new javax.swing.JTextField();
+        JT_CentroVacunacion = new javax.swing.JTextField();
+        JT_DiaHoraCita = new javax.swing.JTextField();
+        JT_NroSerieDosisAdmin = new javax.swing.JTextField();
         IF_Consultas = new javax.swing.JInternalFrame();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         IF_Ayuda = new javax.swing.JInternalFrame();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuFlotante = new javax.swing.JMenuBar();
         JM_Paciente = new javax.swing.JMenu();
         MI_Paciente = new javax.swing.JMenuItem();
         JM_Laboratorio = new javax.swing.JMenu();
@@ -104,14 +158,20 @@ public class VacunarGUI extends javax.swing.JFrame {
         MI_Salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         setPreferredSize(new java.awt.Dimension(1000, 690));
+
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         IF_Paciente.setClosable(true);
         IF_Paciente.setTitle("Paciente");
-        IF_Paciente.setPreferredSize(new java.awt.Dimension(870, 680));
+        IF_Paciente.setFrameIcon(null);
+        IF_Paciente.setMinimumSize(new java.awt.Dimension(870, 690));
+        IF_Paciente.setName(""); // NOI18N
+        IF_Paciente.setPreferredSize(new java.awt.Dimension(870, 690));
         IF_Paciente.setVisible(true);
         IF_Paciente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -200,27 +260,40 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Paciente.getContentPane().add(RB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 80, -1));
         IF_Paciente.getContentPane().add(LB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 190, 30));
 
+
         getContentPane().add(IF_Paciente);
 
         IF_Laboratorio.setClosable(true);
         IF_Laboratorio.setTitle("Laboratorio");
+        IF_Laboratorio.setMinimumSize(new java.awt.Dimension(870, 680));
+        IF_Laboratorio.setName(""); // NOI18N
         IF_Laboratorio.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Laboratorio.setVisible(true);
+
         IF_Laboratorio.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         getContentPane().add(IF_Laboratorio);
 
         IF_Vacuna.setClosable(true);
         IF_Vacuna.setTitle("Vacuna");
+        IF_Vacuna.setMinimumSize(new java.awt.Dimension(870, 680));
+        IF_Vacuna.setName(""); // NOI18N
         IF_Vacuna.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Vacuna.setVisible(true);
+
         IF_Vacuna.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         getContentPane().add(IF_Vacuna);
 
         IF_Admin.setClosable(true);
         IF_Admin.setTitle("Administración");
+        IF_Admin.setMinimumSize(new java.awt.Dimension(870, 680));
+        IF_Admin.setName(""); // NOI18N
         IF_Admin.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Admin.setVisible(true);
+
         IF_Admin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         getContentPane().add(IF_Admin);
 
         IF_Consultas.setClosable(true);
@@ -267,9 +340,11 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Ayuda.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(IF_Ayuda);
 
+
         jMenuBar1.setAlignmentX(0.0F);
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(682, 35));
+
 
         JM_Paciente.setText("Paciente");
         JM_Paciente.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -282,7 +357,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Paciente.add(MI_Paciente);
 
-        jMenuBar1.add(JM_Paciente);
+        MenuFlotante.add(JM_Paciente);
 
         JM_Laboratorio.setText("Laboratorio");
         JM_Laboratorio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -295,7 +370,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Laboratorio.add(MI_lab);
 
-        jMenuBar1.add(JM_Laboratorio);
+        MenuFlotante.add(JM_Laboratorio);
 
         JM_Vacuna.setText("Vacuna");
         JM_Vacuna.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -308,7 +383,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Vacuna.add(MI_Vac);
 
-        jMenuBar1.add(JM_Vacuna);
+        MenuFlotante.add(JM_Vacuna);
 
         JM_Admin.setText("Administración");
         JM_Admin.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -329,7 +404,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Admin.add(MI_ModTurno);
 
-        jMenuBar1.add(JM_Admin);
+        MenuFlotante.add(JM_Admin);
 
         JM_Consultas.setText("Consultas");
         JM_Consultas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -358,7 +433,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Consultas.add(MI_StockVac);
 
-        jMenuBar1.add(JM_Consultas);
+        MenuFlotante.add(JM_Consultas);
 
         JM_Temas.setText("Temas");
         JM_Temas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -369,7 +444,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         MI_Dia.setText("Día");
         JM_Temas.add(MI_Dia);
 
-        jMenuBar1.add(JM_Temas);
+        MenuFlotante.add(JM_Temas);
 
         JM_Ayuda.setText("Ayuda");
         JM_Ayuda.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -382,7 +457,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Ayuda.add(MI_Ayuda);
 
-        jMenuBar1.add(JM_Ayuda);
+        MenuFlotante.add(JM_Ayuda);
 
         JM_Salir.setText("Salir");
         JM_Salir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -395,12 +470,13 @@ public class VacunarGUI extends javax.swing.JFrame {
         });
         JM_Salir.add(MI_Salir);
 
-        jMenuBar1.add(JM_Salir);
+        MenuFlotante.add(JM_Salir);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuFlotante);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void MI_PacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_PacienteActionPerformed
         ocultarIFrames();
@@ -700,7 +776,6 @@ public class VacunarGUI extends javax.swing.JFrame {
     return true; // Todos los campos son válidos.
 }
 
-
     /**
      * @param args the command line arguments
      */
@@ -726,6 +801,15 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JInternalFrame IF_Laboratorio;
     private javax.swing.JInternalFrame IF_Paciente;
     private javax.swing.JInternalFrame IF_Vacuna;
+    private javax.swing.JButton JB_BuscarCita;
+    private javax.swing.JButton JB_BuscarLaboratorio;
+    private javax.swing.JButton JB_BuscarPaciente;
+    private javax.swing.JButton JB_GuardarActualizarCita;
+    private javax.swing.JButton JB_GuardarActualizarLaboratorio;
+    private javax.swing.JButton JB_GuardarActualizarPaciente;
+    private javax.swing.JButton JB_NuevaCita;
+    private javax.swing.JButton JB_NuevoLaboratorio;
+    private javax.swing.JButton JB_NuevoPaciente;
     private javax.swing.JMenu JM_Admin;
     private javax.swing.JMenu JM_Ayuda;
     private javax.swing.JMenu JM_Consultas;
@@ -734,6 +818,7 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Salir;
     private javax.swing.JMenu JM_Temas;
     private javax.swing.JMenu JM_Vacuna;
+
     private javax.swing.JTextField JT_Apellido;
     private javax.swing.JTextField JT_Celular;
     private javax.swing.JTextField JT_DNI;
@@ -757,20 +842,25 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_Vac;
     private javax.swing.JMenuItem MI_lab;
     private javax.swing.JRadioButton RB_EstadoPaciente;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+
     // End of variables declaration//GEN-END:variables
 }
