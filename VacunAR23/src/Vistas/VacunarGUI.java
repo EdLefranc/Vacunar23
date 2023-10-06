@@ -529,15 +529,15 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         if (choice == JOptionPane.YES_OPTION) {
             // Código para guardar
-            JOptionPane.showMessageDialog(null, "Seleccionaste Nuevo Paciente");
+            //JOptionPane.showMessageDialog(null, "Seleccionaste Nuevo Paciente");
             limpiarCampos(IF_Paciente, LB_EstadoPaciente);
         } else if (choice == JOptionPane.NO_OPTION) {
             // Código para iniciar otra búsqueda
-            JOptionPane.showMessageDialog(null, "Seleccionaste Búsqueda Nueva");
+            //JOptionPane.showMessageDialog(null, "Seleccionaste Búsqueda Nueva");
             limpiarCampos(IF_Paciente, LB_EstadoPaciente);
         }
     }//GEN-LAST:event_BTN_NuevoPacienteActionPerformed
-
+        
     private void BTN_GuardarActualizarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActualizarPacienteActionPerformed
 
         CiudadanoData ciuData = new CiudadanoData();
@@ -552,21 +552,46 @@ public class VacunarGUI extends javax.swing.JFrame {
         String responsableLegal = JT_ResponsableLegal.getText();
         String edad = JT_Edad.getText();
         
-        boolean esValido = esNumeroDNI(dni);
-
+        boolean esDNIValido = esNumeroDNI(dni);
+        boolean numValido = esNumeroValido(edad);
         
 
-        if (esValido && validarCamposString(JT_Nombre, JT_Apellido)) {
+        if (esDNIValido && numValido) {//&& validarCamposString(JT_Nombre, JT_Apellido, JT_DNI, JT_Celular)
             try {
 
                 boolean estadoPaciente = RB_EstadoPaciente.isSelected(); //Verifico que el estado del radioButton según el estado del alumno
-
+                // Buscar ciudadano por DNI
+                Ciudadano pacienteEncontrado = ciuData.buscarCiudadanoPorDni(Integer.parseInt(dni));
+            
+                if (pacienteEncontrado != null) {
+                int opcion = JOptionPane.showConfirmDialog(null, "El DNI ya existe. ¿Deseas actualizarlo?", "Confirmación", JOptionPane.YES_NO_OPTION);
+                if (opcion == JOptionPane.YES_OPTION) {
+                    // Actualizar el ciudadano existente
+                    pacienteEncontrado.setNombre(nombre);
+                    pacienteEncontrado.setApellido(apellido);
+                    pacienteEncontrado.setEmail(email);
+                    pacienteEncontrado.setCelular(celular);
+                    pacienteEncontrado.setPatologia(patologia);
+                    pacienteEncontrado.setOcupacion(ocupacion);
+                    pacienteEncontrado.setEdad(Integer.parseInt(edad));
+                    pacienteEncontrado.setResponsableLegal(responsableLegal);
+                    pacienteEncontrado.setEstado(estadoPaciente);
+                    
+                    ciuData.modificarCiudadano(pacienteEncontrado);
+                    limpiarCampos(IF_Paciente, LB_EstadoPaciente);
+                }
+            } else {
+                
+                // El DNI no existe, guardar un nuevo ciudadano
                 Ciudadano citizen = new Ciudadano(Integer.parseInt(dni), nombre, apellido, email, celular, patologia, ocupacion, Integer.parseInt(edad), responsableLegal, estadoPaciente);
                 ciuData.guardarCiudadano(citizen);
+                JOptionPane.showMessageDialog(null, "Se ha guardado un paciente nuevo.");
                 limpiarCampos(IF_Paciente, LB_EstadoPaciente);
+                }                
 
             } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, "No corresponde guardar estos tipos de datos.");
+                JOptionPane.showMessageDialog(null, "Error al guardar estos tipos de datos. Verificar.");
+                System.out.println("Error: " + e);
             }
 
         } else {
@@ -597,28 +622,53 @@ public class VacunarGUI extends javax.swing.JFrame {
     public static boolean esNumeroDNI(String str) {
 
         if (str == null || str.isEmpty()) { // Evalúa que no sea un campo vacío
+            JOptionPane.showMessageDialog(null, "Campo DNI debe llenarse.");
             return false;
         }
 
         for (char c : str.toCharArray()) { // Evalúa que no contenga carácteres, uso un for each para eso
             if (!Character.isDigit(c)) {
+                JOptionPane.showMessageDialog(null, "Campo DNI debe contener solo números.");
                 return false; // No es un número válido.
             }
         }
 
         try {
             int dni = Integer.parseInt(str); // Intenta convertir a entero.
-            return dni > 4000000 && dni < 99999999;
+            return dni > 4000000 && dni < 999999999;
         } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Campo DNI debe ser un valor acorde.");
             return false; // No se pudo convertir a entero.
         }
     }
+    
+    public static boolean esNumeroValido(String str) {
 
+        if (str == null || str.isEmpty()) { // Evalúa que no sea un campo vacío            
+            return false;
+        }
+
+        for (char c : str.toCharArray()) { // Evalúa que no contenga carácteres, uso un for each para eso
+            if (!Character.isDigit(c)) {
+                JOptionPane.showMessageDialog(null, "Campo DNI y Edad debe contener solo números.");
+                return false; // No es un número válido.
+            }
+        }
+
+        try {
+            int num = Integer.parseInt(str); // Intenta convertir a entero.
+            return num > 0 && num < 150;
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Campo Edad debe ser un valor acorde.");
+            return false; // No se pudo convertir a entero.
+        }
+    }
+    
     public boolean validarCamposInt(JTextField campoNumerico) {
         String textoCampoNumerico = campoNumerico.getText();
         boolean contieneSoloNumeros = contieneSoloNumeros(textoCampoNumerico);
         if (!contieneSoloNumeros) {
-            JOptionPane.showMessageDialog(null, "Año debe contener solo números.");
+            JOptionPane.showMessageDialog(null, "Edad debe contener solo números.");
             return false;
         }
         return true;
@@ -637,19 +687,19 @@ public class VacunarGUI extends javax.swing.JFrame {
         return texto.matches("\\d+");
     }
 
-    public boolean validarCamposString(JTextField campo1, JTextField campo2) {
-        String textoCampo1 = campo1.getText();
-        String textoCampo2 = campo2.getText();
+    public boolean validarCamposString(JTextField... campos) {
+    for (JTextField campo : campos) {
+        String textoCampo = campo.getText().trim(); // Elimina espacios en blanco al principio y al final.
 
-        boolean contieneLetrasCampo1 = contieneLetras(textoCampo1);
-        boolean contieneLetrasCampo2 = contieneLetras(textoCampo2);
-
-        if (!contieneLetrasCampo1 || !contieneLetrasCampo2) {
-            JOptionPane.showMessageDialog(null, "Nombre y Apellido deben contener al menos una letra.");
+        if (textoCampo.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Los campos no deben estar vacíos. Verificar.");
             return false;
         }
-        return true;
     }
+
+    return true; // Todos los campos son válidos.
+}
+
 
     /**
      * @param args the command line arguments
