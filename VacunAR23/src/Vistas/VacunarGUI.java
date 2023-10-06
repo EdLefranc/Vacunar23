@@ -5,8 +5,17 @@
  */
 package Vistas;
 
+import AccesoADatos.CiudadanoData;
+import Entidades.Ciudadano;
 import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
-
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import java.util.ArrayList;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
 
 public class VacunarGUI extends javax.swing.JFrame {
 
@@ -19,8 +28,8 @@ public class VacunarGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         ocultarIFrames();
     }
-    
-    public void ocultarIFrames(){
+
+    public void ocultarIFrames() {
         IF_Paciente.setVisible(false);
         IF_Laboratorio.setVisible(false);
         IF_Vacuna.setVisible(false);
@@ -28,7 +37,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Consultas.setVisible(false);
         IF_Ayuda.setVisible(false);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,6 +48,30 @@ public class VacunarGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         IF_Paciente = new javax.swing.JInternalFrame();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        JT_Ocupacion = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        JT_DNI = new javax.swing.JTextField();
+        JT_Nombre = new javax.swing.JTextField();
+        JT_Email = new javax.swing.JTextField();
+        JT_Patologia = new javax.swing.JTextField();
+        JT_Apellido = new javax.swing.JTextField();
+        JT_Edad = new javax.swing.JTextField();
+        JT_Celular = new javax.swing.JTextField();
+        JT_ResponsableLegal = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        BTN_BuscarPaciente = new javax.swing.JButton();
+        BTN_GuardarActualizarPaciente = new javax.swing.JButton();
+        BTN_NuevoPaciente = new javax.swing.JButton();
+        RB_EstadoPaciente = new javax.swing.JRadioButton();
+        LB_EstadoPaciente = new javax.swing.JLabel();
         IF_Laboratorio = new javax.swing.JInternalFrame();
         IF_Vacuna = new javax.swing.JInternalFrame();
         IF_Admin = new javax.swing.JInternalFrame();
@@ -79,6 +112,94 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Paciente.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Paciente.setVisible(true);
         IF_Paciente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("PACIENTE");
+        IF_Paciente.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 868, 94));
+
+        jLabel4.setText("DNI");
+        IF_Paciente.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 20, 40));
+
+        JT_Ocupacion.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 180, 30));
+
+        jLabel5.setText("NOMBRE");
+        IF_Paciente.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 50, 40));
+
+        jLabel6.setText("EMAIL");
+        IF_Paciente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 40, 40));
+
+        jLabel7.setText("PATOLOGÍA");
+        IF_Paciente.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 70, 40));
+
+        jLabel8.setText("OCUPACIÓN");
+        IF_Paciente.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 70, 40));
+
+        JT_DNI.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 180, 30));
+
+        JT_Nombre.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 180, 30));
+
+        JT_Email.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 180, 30));
+
+        JT_Patologia.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Patologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 180, 30));
+
+        JT_Apellido.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 180, 30));
+
+        JT_Edad.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 180, 30));
+
+        JT_Celular.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_Celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 180, 30));
+
+        JT_ResponsableLegal.setColumns(1);
+        IF_Paciente.getContentPane().add(JT_ResponsableLegal, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 180, 30));
+
+        jLabel10.setText("APELLIDO");
+        IF_Paciente.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 60, 40));
+
+        jLabel11.setText("EDAD");
+        IF_Paciente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 40, 40));
+
+        jLabel12.setText("CELULAR");
+        IF_Paciente.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 60, 40));
+
+        jLabel13.setText("RESPONSABLE LEGAL");
+        IF_Paciente.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 130, 40));
+
+        BTN_BuscarPaciente.setText("BUSCAR PACIENTE");
+        BTN_BuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_BuscarPacienteActionPerformed(evt);
+            }
+        });
+        IF_Paciente.getContentPane().add(BTN_BuscarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 112, 340, 40));
+
+        BTN_GuardarActualizarPaciente.setText("GUARDAR | ACTUALIZAR");
+        BTN_GuardarActualizarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_GuardarActualizarPacienteActionPerformed(evt);
+            }
+        });
+        IF_Paciente.getContentPane().add(BTN_GuardarActualizarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, 280, 60));
+
+        BTN_NuevoPaciente.setText("NUEVO PACIENTE");
+        BTN_NuevoPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_NuevoPacienteActionPerformed(evt);
+            }
+        });
+        IF_Paciente.getContentPane().add(BTN_NuevoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 280, 60));
+
+        RB_EstadoPaciente.setText("Activo");
+        IF_Paciente.getContentPane().add(RB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 80, -1));
+        IF_Paciente.getContentPane().add(LB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 190, 30));
+
         getContentPane().add(IF_Paciente);
 
         IF_Laboratorio.setClosable(true);
@@ -267,6 +388,11 @@ public class VacunarGUI extends javax.swing.JFrame {
         JM_Salir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
         MI_Salir.setText("Salir del programa");
+        MI_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_SalirActionPerformed(evt);
+            }
+        });
         JM_Salir.add(MI_Salir);
 
         jMenuBar1.add(JM_Salir);
@@ -321,13 +447,217 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Ayuda.setVisible(true);
     }//GEN-LAST:event_MI_AyudaActionPerformed
 
+    private void BTN_BuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarPacienteActionPerformed
+        CiudadanoData ciuData = new CiudadanoData();
+        ArrayList<Ciudadano> ciudadanoBuscado = new ArrayList<>();
+        String dniPaciente = JT_DNI.getText();
+        boolean dniValido = esNumeroDNI(dniPaciente);
+
+        if (dniValido) {
+            try {
+
+                int dniCiudadano = Integer.parseInt(dniPaciente);
+                ciudadanoBuscado.add(ciuData.buscarCiudadanoPorDni(dniCiudadano));
+
+                // Verifico si se encontró un alumno antes de mostrar los datos
+                String apellido = ciudadanoBuscado.get(0).getApellido();
+                String nombre = ciudadanoBuscado.get(0).getNombre();
+                String email = ciudadanoBuscado.get(0).getEmail();
+                String patologia = ciudadanoBuscado.get(0).getPatologia();
+                String ocupacion = ciudadanoBuscado.get(0).getOcupacion();
+                String celular = ciudadanoBuscado.get(0).getCelular();
+                String responsableLegal = ciudadanoBuscado.get(0).getResponsableLegal();
+                int edad = ciudadanoBuscado.get(0).getEdad();
+                boolean estado = ciudadanoBuscado.get(0).isEstado();
+
+                String edadString = String.valueOf(edad);
+
+                // Muestra los datos en los campos de información
+                JT_Apellido.setText(apellido);
+                JT_Nombre.setText(nombre);
+                JT_Celular.setText(celular);
+                JT_Email.setText(email);
+                JT_Patologia.setText(patologia);
+                JT_Ocupacion.setText(ocupacion);
+                JT_ResponsableLegal.setText(responsableLegal);
+                JT_Edad.setText(edadString);
+
+                RB_EstadoPaciente.setSelected(estado); // Establecemos el estado del RadioButton           
+                if (RB_EstadoPaciente.isSelected()) {
+                    Color verde = new Color(0, 204, 0);
+                    LB_EstadoPaciente.setText("Paciente activo");
+                    LB_EstadoPaciente.setForeground(verde);
+                } else {
+                    Color rojo = new Color(210, 32, 32);
+                    LB_EstadoPaciente.setText("Paciente inactivo");
+                    LB_EstadoPaciente.setForeground(rojo);
+                }
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, "El paciente no existe en las listas\nIntenta con otro DNI");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingresa un DNI válido");
+        }
+    }//GEN-LAST:event_BTN_BuscarPacienteActionPerformed
+
+    private void MI_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_SalirActionPerformed
+        int confirm = JOptionPane.showConfirmDialog(
+                this,
+                "¿Estás seguro de que quieres cerrar la aplicación?",
+                "Confirmar Cierre",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            // Cierra la aplicación
+            System.exit(0);
+        }
+    }//GEN-LAST:event_MI_SalirActionPerformed
+
+    private void BTN_NuevoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_NuevoPacienteActionPerformed
+
+        Object[] options = {"Nuevo Paciente", "Búsqueda Nueva"};
+        int choice = JOptionPane.showOptionDialog(null,
+                "¿Qué quieres hacer?",
+                "Elegir una opción",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+
+        if (choice == JOptionPane.YES_OPTION) {
+            // Código para guardar
+            JOptionPane.showMessageDialog(null, "Seleccionaste Nuevo Paciente");
+            limpiarCampos(IF_Paciente, LB_EstadoPaciente);
+        } else if (choice == JOptionPane.NO_OPTION) {
+            // Código para iniciar otra búsqueda
+            JOptionPane.showMessageDialog(null, "Seleccionaste Búsqueda Nueva");
+            limpiarCampos(IF_Paciente, LB_EstadoPaciente);
+        }
+    }//GEN-LAST:event_BTN_NuevoPacienteActionPerformed
+
+    private void BTN_GuardarActualizarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActualizarPacienteActionPerformed
+
+        CiudadanoData ciuData = new CiudadanoData();
+
+        String dni = JT_DNI.getText();
+        String apellido = JT_Apellido.getText();
+        String nombre = JT_Nombre.getText();
+        String email = JT_Email.getText();
+        String patologia = JT_Patologia.getText();
+        String ocupacion = JT_Ocupacion.getText();
+        String celular = JT_Celular.getText();
+        String responsableLegal = JT_ResponsableLegal.getText();
+        String edad = JT_Edad.getText();
+        
+        boolean esValido = esNumeroDNI(dni);
+
+        
+
+        if (esValido && validarCamposString(JT_Nombre, JT_Apellido)) {
+            try {
+
+                boolean estadoPaciente = RB_EstadoPaciente.isSelected(); //Verifico que el estado del radioButton según el estado del alumno
+
+                Ciudadano citizen = new Ciudadano(Integer.parseInt(dni), nombre, apellido, email, celular, patologia, ocupacion, Integer.parseInt(edad), responsableLegal, estadoPaciente);
+                ciuData.guardarCiudadano(citizen);
+                limpiarCampos(IF_Paciente, LB_EstadoPaciente);
+
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, "No corresponde guardar estos tipos de datos.");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al llenar formulario\nVerifica los campos y que sean correctos.");
+        }
+    }//GEN-LAST:event_BTN_GuardarActualizarPacienteActionPerformed
+
+    private void limpiarCampos(JInternalFrame internalFrame, JLabel labelALimpiar) {
+        if (internalFrame != null) {
+            Component[] components = internalFrame.getContentPane().getComponents();
+            for (Component component : components) {
+                if (component instanceof JTextField) {
+                    JTextField textField = (JTextField) component;
+                    textField.setText("");
+                } else if (component instanceof JRadioButton) {
+                    JRadioButton radioButton = (JRadioButton) component;
+                    radioButton.setSelected(false);
+                } else if (component == labelALimpiar) {
+                    if (labelALimpiar instanceof JLabel) {
+                        JLabel label = (JLabel) labelALimpiar;
+                        label.setText("");
+                    }
+                }
+            }
+        }
+    }
+
+    public static boolean esNumeroDNI(String str) {
+
+        if (str == null || str.isEmpty()) { // Evalúa que no sea un campo vacío
+            return false;
+        }
+
+        for (char c : str.toCharArray()) { // Evalúa que no contenga carácteres, uso un for each para eso
+            if (!Character.isDigit(c)) {
+                return false; // No es un número válido.
+            }
+        }
+
+        try {
+            int dni = Integer.parseInt(str); // Intenta convertir a entero.
+            return dni > 4000000 && dni < 99999999;
+        } catch (NumberFormatException e) {
+            return false; // No se pudo convertir a entero.
+        }
+    }
+
+    public boolean validarCamposInt(JTextField campoNumerico) {
+        String textoCampoNumerico = campoNumerico.getText();
+        boolean contieneSoloNumeros = contieneSoloNumeros(textoCampoNumerico);
+        if (!contieneSoloNumeros) {
+            JOptionPane.showMessageDialog(null, "Año debe contener solo números.");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean contieneLetras(String texto) {
+        for (char c : texto.toCharArray()) {
+            if (Character.isLetter(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean contieneSoloNumeros(String texto) {
+        return texto.matches("\\d+");
+    }
+
+    public boolean validarCamposString(JTextField campo1, JTextField campo2) {
+        String textoCampo1 = campo1.getText();
+        String textoCampo2 = campo2.getText();
+
+        boolean contieneLetrasCampo1 = contieneLetras(textoCampo1);
+        boolean contieneLetrasCampo2 = contieneLetras(textoCampo2);
+
+        if (!contieneLetrasCampo1 || !contieneLetrasCampo2) {
+            JOptionPane.showMessageDialog(null, "Nombre y Apellido deben contener al menos una letra.");
+            return false;
+        }
+        return true;
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         FlatCarbonIJTheme.setup();
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -337,6 +667,9 @@ public class VacunarGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BTN_BuscarPaciente;
+    private javax.swing.JButton BTN_GuardarActualizarPaciente;
+    private javax.swing.JButton BTN_NuevoPaciente;
     private javax.swing.JInternalFrame IF_Admin;
     private javax.swing.JInternalFrame IF_Ayuda;
     private javax.swing.JInternalFrame IF_Consultas;
@@ -351,6 +684,16 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Salir;
     private javax.swing.JMenu JM_Temas;
     private javax.swing.JMenu JM_Vacuna;
+    private javax.swing.JTextField JT_Apellido;
+    private javax.swing.JTextField JT_Celular;
+    private javax.swing.JTextField JT_DNI;
+    private javax.swing.JTextField JT_Edad;
+    private javax.swing.JTextField JT_Email;
+    private javax.swing.JTextField JT_Nombre;
+    private javax.swing.JTextField JT_Ocupacion;
+    private javax.swing.JTextField JT_Patologia;
+    private javax.swing.JTextField JT_ResponsableLegal;
+    private javax.swing.JLabel LB_EstadoPaciente;
     private javax.swing.JMenuItem MI_Ayuda;
     private javax.swing.JMenuItem MI_Dia;
     private javax.swing.JMenuItem MI_Labs;
@@ -363,8 +706,19 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_Turnos;
     private javax.swing.JMenuItem MI_Vac;
     private javax.swing.JMenuItem MI_lab;
+    private javax.swing.JRadioButton RB_EstadoPaciente;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
