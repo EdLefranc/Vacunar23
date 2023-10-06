@@ -5,6 +5,11 @@
  */
 package Vistas;
 
+import AccesoADatos.CiudadanoData;
+import Entidades.Ciudadano;
+import static Entidades.Ciudadano.esNumeroDNI;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ed Le Franc
@@ -105,6 +110,12 @@ public class VacunarGUI extends javax.swing.JFrame {
         JT_DiaHoraCita = new javax.swing.JTextField();
         JT_NroSerieDosisAdmin = new javax.swing.JTextField();
         IF_Consultas = new javax.swing.JInternalFrame();
+        label_Titulo_Insc = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabla_Inscripciones = new javax.swing.JTable();
+        btn_Buscar = new javax.swing.JButton();
+        JT_Dni1 = new javax.swing.JTextField();
         IF_Ayuda = new javax.swing.JInternalFrame();
         MenuFlotante = new javax.swing.JMenuBar();
         JM_Paciente = new javax.swing.JMenu();
@@ -130,7 +141,6 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 700));
-        setPreferredSize(new java.awt.Dimension(900, 700));
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         IF_Paciente.setClosable(true);
@@ -197,6 +207,11 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         JB_GuardarActualizarPaciente.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         JB_GuardarActualizarPaciente.setText("GUARDAR/ACTUALIZAR");
+        JB_GuardarActualizarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_GuardarActualizarPacienteActionPerformed(evt);
+            }
+        });
         IF_Paciente.getContentPane().add(JB_GuardarActualizarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, -1, -1));
 
         JT_Dni.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -678,7 +693,91 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Consultas.setTitle("Consultas");
         IF_Consultas.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Consultas.setVisible(true);
-        IF_Consultas.getContentPane().setLayout(new java.awt.FlowLayout());
+
+        label_Titulo_Insc.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label_Titulo_Insc.setText("Consulta Stock Vacuna");
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel35.setText("Numero de serie");
+
+        Tabla_Inscripciones.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Tabla_Inscripciones.setForeground(new java.awt.Color(0, 204, 0));
+        Tabla_Inscripciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Laboratorio", "Nombre", "Marca", "Numero Serie"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(Tabla_Inscripciones);
+
+        btn_Buscar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btn_Buscar.setText("Buscar");
+        btn_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BuscarActionPerformed(evt);
+            }
+        });
+
+        JT_Dni1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout IF_ConsultasLayout = new javax.swing.GroupLayout(IF_Consultas.getContentPane());
+        IF_Consultas.getContentPane().setLayout(IF_ConsultasLayout);
+        IF_ConsultasLayout.setHorizontalGroup(
+            IF_ConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IF_ConsultasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_Titulo_Insc)
+                .addGap(188, 188, 188))
+            .addGroup(IF_ConsultasLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(IF_ConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IF_ConsultasLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(61, Short.MAX_VALUE))
+                    .addGroup(IF_ConsultasLayout.createSequentialGroup()
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(JT_Dni1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_Buscar)
+                        .addGap(78, 78, 78))))
+        );
+        IF_ConsultasLayout.setVerticalGroup(
+            IF_ConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IF_ConsultasLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(label_Titulo_Insc)
+                .addGap(69, 69, 69)
+                .addGroup(IF_ConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(IF_ConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JT_Dni1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(155, 155, 155))
+        );
+
         getContentPane().add(IF_Consultas);
 
         IF_Ayuda.setClosable(true);
@@ -737,6 +836,11 @@ public class VacunarGUI extends javax.swing.JFrame {
         JM_Consultas.add(jMenuItem7);
 
         jMenuItem8.setText("Stock de Vacunas");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         JM_Consultas.add(jMenuItem8);
 
         MenuFlotante.add(JM_Consultas);
@@ -805,9 +909,93 @@ public class VacunarGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JT_VencimientoLoteActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void btn_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BuscarActionPerformed
+
+     CiudadanoData ciudadanoData = new CiudadanoData();
+    String dni = JT_Dni.getText();
+
+    boolean esValido = esNumeroDNI(dni);
+
+    if (esValido) {
+        try {
+            int dniCiudadano = Integer.parseInt(dni);
+            Ciudadano ciudadano = ciudadanoData.buscarCiudadanoPorDni(dniCiudadano);
+
+            // Verifico si se encontró un ciudadano antes de mostrar los datos
+            if (ciudadano != null) {
+                String apellido = ciudadano.getApellido();
+                String nombre = ciudadano.getNombre();
+                String email = ciudadano.getEmail();
+                String celular = ciudadano.getCelular();
+                String patologia = ciudadano.getPatologia();
+                String ocupacion = ciudadano.getOcupacion();
+                int edad = ciudadano.getEdad();
+                String responsableLegal = ciudadano.getResponsableLegal();
+
+                // Muestra los datos en los campos de información
+                JT_ApellidoPaciente.setText(apellido);
+                JT_NombrePaciente.setText(nombre);
+                JT_MailPaciente.setText(email);
+                JT_CelularPaciente.setText(celular);
+                JT_Patologia.setText(patologia);
+                JT_Ocupacion.setText(ocupacion);
+                JT_Edad.setText(String.valueOf(edad));
+                JT_RLegal.setText(responsableLegal);
+
+                // Establecer el estado u otros componentes gráficos si es necesario
+            } else {
+                JOptionPane.showMessageDialog(null, "El ciudadano no existe en la base de datos.\nIntenta con otro DNI.");
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El DNI debe ser un número válido.");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Ingresa un DNI válido.");
+    } 
+
+    }//GEN-LAST:event_btn_BuscarActionPerformed
+
+    private void JB_GuardarActualizarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GuardarActualizarPacienteActionPerformed
+      // Obtén los datos del formulario
+    int dni = Integer.parseInt(JT_Dni.getText());
+    String nombre = JT_NombrePaciente.getText();
+    String apellido = JT_ApellidoPaciente.getText();
+    String email = JT_MailPaciente.getText();
+    String celular = JT_CelularPaciente.getText();
+    String patologia = JT_Patologia.getText();
+    String ocupacion = JT_Ocupacion.getText();
+    int edad = Integer.parseInt(JT_Edad.getText());
+    String responsableLegal = JT_RLegal.getText();
+    boolean estado = true;
+    // Crea un objeto Ciudadano con los datos del formulario
+    Ciudadano ciudadano = new Ciudadano(dni, nombre,  apellido,  email,  celular,  patologia,  ocupacion,  edad, estado);
+    // Guarda el paciente en la base de datos
+    CiudadanoData ciudadanoData = new CiudadanoData(); // Debes tener una instancia de CiudadanoData
+    ciudadanoData.guardarCiudadano(ciudadano);
+    
+    JOptionPane.showMessageDialog(this, "Paciente guardado correctamente.");
+    
+    
+    limpiarCampos();
+    }//GEN-LAST:event_JB_GuardarActualizarPacienteActionPerformed
+
+private void limpiarCampos() {
+    JT_Dni.setText("");
+    JT_NombrePaciente.setText("");
+    JT_ApellidoPaciente.setText("");
+    JT_MailPaciente.setText("");
+    JT_CelularPaciente.setText("");
+    JT_Patologia.setText("");
+    JT_Ocupacion.setText("");
+    JT_Edad.setText("");
+    JT_RLegal.setText("");
+}
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -864,8 +1052,6 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Salir;
     private javax.swing.JMenu JM_Temas;
     private javax.swing.JMenu JM_Vacuna;
-
-    private javax.swing.JMenuBar MenuFlotante;
     private javax.swing.JTextField JT_ApellidoPaciente;
     private javax.swing.JTextField JT_CelularPaciente;
     private javax.swing.JTextField JT_CentroVacunacion;
@@ -875,6 +1061,7 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JTextField JT_Cuit;
     private javax.swing.JTextField JT_DiaHoraCita;
     private javax.swing.JTextField JT_Dni;
+    private javax.swing.JTextField JT_Dni1;
     private javax.swing.JTextField JT_DomicilioComercial;
     private javax.swing.JTextField JT_Edad;
     private javax.swing.JTextField JT_MailLaboratorio;
@@ -893,6 +1080,9 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JTextField JT_RLegal;
     private javax.swing.JTextField JT_TelefonoLaboratorio;
     private javax.swing.JTextField JT_VencimientoLote;
+    private javax.swing.JMenuBar MenuFlotante;
+    private javax.swing.JTable Tabla_Inscripciones;
+    private javax.swing.JButton btn_Buscar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -923,14 +1113,13 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuBar jMenuBar1;
-
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -943,5 +1132,7 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_Titulo_Insc;
     // End of variables declaration//GEN-END:variables
 }
