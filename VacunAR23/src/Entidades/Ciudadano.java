@@ -24,6 +24,19 @@ public class Ciudadano {
     public Ciudadano() {
     }
 
+    public Ciudadano(int dni, String nombre, String apellido, String email, String celular, String patologia, String ocupacion, int edad, String responsableLegal, boolean estado) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.celular = celular;
+        this.patologia = patologia;
+        this.ocupacion = ocupacion;
+        this.edad = edad;
+        this.responsableLegal = responsableLegal;
+        this.estado = estado;
+    }
+    
     public Ciudadano(int dni, String nombre, String apellido, String email, String celular, String patologia, int edad, String responsableLegal, boolean estado) {
         this.dni = dni;
         this.nombre = nombre;
