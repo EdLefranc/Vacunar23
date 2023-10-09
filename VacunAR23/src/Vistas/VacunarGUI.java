@@ -78,7 +78,24 @@ public class VacunarGUI extends javax.swing.JFrame {
         LB_EstadoPaciente1 = new javax.swing.JLabel();
         RB_EstadoPaciente1 = new javax.swing.JRadioButton();
         IF_Laboratorio = new javax.swing.JInternalFrame();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        JB_BuscarLaboratorio = new javax.swing.JButton();
+        JB_NuevoLaboratorio = new javax.swing.JButton();
+        JB_GuardarActualizarLaboratorio = new javax.swing.JButton();
+        JT_Cuit = new javax.swing.JTextField();
+        JT_NombreLaboratorio = new javax.swing.JTextField();
+        JT_Pais = new javax.swing.JTextField();
+        JT_DomicilioComercial = new javax.swing.JTextField();
+        JT_MailLaboratorio = new javax.swing.JTextField();
+        JT_TelefonoLaboratorio = new javax.swing.JTextField();
         IF_Vacuna = new javax.swing.JInternalFrame();
+
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -98,7 +115,43 @@ public class VacunarGUI extends javax.swing.JFrame {
         RB_AplicacionVacuna = new javax.swing.JRadioButton();
         LB_AplicacionVacuna = new javax.swing.JLabel();
         JT_MarcaVacuna1 = new javax.swing.JTextField();
+
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        JT_NumeroSerieVacuna = new javax.swing.JTextField();
+        JT_CuilLabVacuna = new javax.swing.JTextField();
+        JT_NombreVacuna = new javax.swing.JTextField();
+        JT_MarcaVacuna = new javax.swing.JTextField();
+        JT_MedidaAplicar = new javax.swing.JTextField();
+        JT_VencimientoLote = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+
         IF_Admin = new javax.swing.JInternalFrame();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        JB_BuscarCita = new javax.swing.JButton();
+        JB_NuevaCita = new javax.swing.JButton();
+        JB_GuardarActualizarCita = new javax.swing.JButton();
+        JT_CodigoCita = new javax.swing.JTextField();
+        JT_Paciente = new javax.swing.JTextField();
+        JT_CodigoRefuerzo = new javax.swing.JTextField();
+        JT_CentroVacunacion = new javax.swing.JTextField();
+        JT_DiaHoraCita = new javax.swing.JTextField();
+        JT_NroSerieDosisAdmin = new javax.swing.JTextField();
         IF_Consultas = new javax.swing.JInternalFrame();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -234,13 +287,129 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Laboratorio.setTitle("Laboratorio");
         IF_Laboratorio.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Laboratorio.setVisible(true);
-        IF_Laboratorio.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel9.setText("LABORATORIO");
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel14.setText("CUIT DEL LABORATORIO");
+
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel15.setText("NOMBRE LABORATORIO");
+
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel16.setText("PAIS DE ORIGEN");
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setText("DOMICILIO COMERCIAL");
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel18.setText("E- MAIL");
+
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel19.setText("TELEFONO");
+
+        JB_BuscarLaboratorio.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JB_BuscarLaboratorio.setText("BUSCAR");
+
+        JB_NuevoLaboratorio.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JB_NuevoLaboratorio.setText("NUEVO");
+
+        JB_GuardarActualizarLaboratorio.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JB_GuardarActualizarLaboratorio.setText("GUARDAR/ACTUALIZAR");
+
+        JT_Cuit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_NombreLaboratorio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_Pais.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_DomicilioComercial.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_MailLaboratorio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_TelefonoLaboratorio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout IF_LaboratorioLayout = new javax.swing.GroupLayout(IF_Laboratorio.getContentPane());
+        IF_Laboratorio.getContentPane().setLayout(IF_LaboratorioLayout);
+        IF_LaboratorioLayout.setHorizontalGroup(
+            IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IF_LaboratorioLayout.createSequentialGroup()
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(IF_LaboratorioLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16)
+                            .addGroup(IF_LaboratorioLayout.createSequentialGroup()
+                                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14)
+                                    .addGroup(IF_LaboratorioLayout.createSequentialGroup()
+                                        .addGap(257, 257, 257)
+                                        .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(JT_Cuit)
+                                            .addComponent(JT_NombreLaboratorio)
+                                            .addComponent(JT_Pais)
+                                            .addComponent(JT_DomicilioComercial)
+                                            .addComponent(JT_MailLaboratorio)
+                                            .addComponent(JT_TelefonoLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                                .addComponent(JB_BuscarLaboratorio))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, IF_LaboratorioLayout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(JB_NuevoLaboratorio)
+                        .addGap(174, 174, 174)
+                        .addComponent(JB_GuardarActualizarLaboratorio)))
+                .addGap(71, 71, 71))
+        );
+        IF_LaboratorioLayout.setVerticalGroup(
+            IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IF_LaboratorioLayout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addGap(83, 83, 83)
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(JT_Cuit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_BuscarLaboratorio))
+                .addGap(17, 17, 17)
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IF_LaboratorioLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(26, 26, 26)
+                        .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(JT_Pais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(JT_NombreLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(JT_DomicilioComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(JT_MailLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(JT_TelefonoLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addGroup(IF_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_NuevoLaboratorio)
+                    .addComponent(JB_GuardarActualizarLaboratorio))
+                .addGap(118, 118, 118))
+        );
+
         getContentPane().add(IF_Laboratorio);
 
         IF_Vacuna.setClosable(true);
         IF_Vacuna.setTitle("Vacuna");
         IF_Vacuna.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Vacuna.setVisible(true);
+
         IF_Vacuna.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -320,13 +489,260 @@ public class VacunarGUI extends javax.swing.JFrame {
         JT_MarcaVacuna1.setColumns(1);
         IF_Vacuna.getContentPane().add(JT_MarcaVacuna1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 180, 30));
 
+
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel20.setText("VACUNA");
+
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel21.setText("NUMERO SERIE DE VACUNA");
+
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel22.setText("CUIL LABORATORIO");
+
+        jLabel23.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel23.setText("NOMBRE DE LA VACUNA");
+
+        jLabel24.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel24.setText("MARCA DE LA VACUNA");
+
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel25.setText("MEDIDA A APLICAR");
+
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel26.setText("VENCIMIENTO DEL LOTE");
+
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel27.setText("APLICADA");
+
+        jButton1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jButton1.setText("BUSCAR");
+
+        jButton2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jButton2.setText("NUEVO");
+
+        jButton3.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jButton3.setText("GUARDAR/ACTUALIZAR");
+
+        JT_NumeroSerieVacuna.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_CuilLabVacuna.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_NombreVacuna.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_MarcaVacuna.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_MedidaAplicar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        JT_VencimientoLote.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+
+        jCheckBox1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCheckBox1.setText("SI/N0");
+
+        javax.swing.GroupLayout IF_VacunaLayout = new javax.swing.GroupLayout(IF_Vacuna.getContentPane());
+        IF_Vacuna.getContentPane().setLayout(IF_VacunaLayout);
+        IF_VacunaLayout.setHorizontalGroup(
+            IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IF_VacunaLayout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(jLabel20)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(IF_VacunaLayout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(116, 116, 116))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IF_VacunaLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel27)
+                    .addGroup(IF_VacunaLayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addGap(115, 115, 115)
+                        .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox1)
+                            .addGroup(IF_VacunaLayout.createSequentialGroup()
+                                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(JT_MedidaAplicar)
+                                    .addComponent(JT_MarcaVacuna)
+                                    .addComponent(JT_NombreVacuna)
+                                    .addComponent(JT_CuilLabVacuna)
+                                    .addComponent(JT_NumeroSerieVacuna)
+                                    .addComponent(JT_VencimientoLote, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(48, 48, 48)
+                                .addComponent(jButton1)))))
+                .addGap(47, 47, 47))
+        );
+        IF_VacunaLayout.setVerticalGroup(
+            IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IF_VacunaLayout.createSequentialGroup()
+                .addComponent(jLabel20)
+                .addGap(51, 51, 51)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(JT_NumeroSerieVacuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(39, 39, 39)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(JT_CuilLabVacuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(JT_NombreVacuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(JT_MarcaVacuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(JT_MedidaAplicar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(JT_VencimientoLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jCheckBox1))
+                .addGap(41, 41, 41)
+                .addGroup(IF_VacunaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addGap(41, 41, 41))
+        );
+
+
         getContentPane().add(IF_Vacuna);
 
         IF_Admin.setClosable(true);
         IF_Admin.setTitle("Administración");
         IF_Admin.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Admin.setVisible(true);
-        IF_Admin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel28.setText("ADMINISTRACION");
+
+        jLabel29.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel29.setText("CODIGO DE CITA");
+
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel30.setText("PACIENTE");
+
+        jLabel31.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel31.setText("CODIGO REFUERZO");
+
+        jLabel32.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel32.setText("CENTRO VACUNACION ASIGNADO");
+
+        jLabel33.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel33.setText("DIA Y HORA CITA");
+
+        jLabel34.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel34.setText("NUMERO SERIE DE LA DOSIS");
+
+        JB_BuscarCita.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JB_BuscarCita.setText("BUSCAR");
+
+        JB_NuevaCita.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JB_NuevaCita.setText("NUEVO");
+
+        JB_GuardarActualizarCita.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        JB_GuardarActualizarCita.setText("GUARDAR/ACTUALIZAR");
+
+        javax.swing.GroupLayout IF_AdminLayout = new javax.swing.GroupLayout(IF_Admin.getContentPane());
+        IF_Admin.getContentPane().setLayout(IF_AdminLayout);
+        IF_AdminLayout.setHorizontalGroup(
+            IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IF_AdminLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel28)
+                .addGap(264, 264, 264))
+            .addGroup(IF_AdminLayout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(JB_NuevaCita)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JB_GuardarActualizarCita)
+                .addGap(165, 165, 165))
+            .addGroup(IF_AdminLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(IF_AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addGap(191, 191, 191)
+                        .addComponent(JT_CodigoCita, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JB_BuscarCita))
+                    .addGroup(IF_AdminLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel34)
+                                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, IF_AdminLayout.createSequentialGroup()
+                                        .addComponent(jLabel31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(JT_CodigoRefuerzo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, IF_AdminLayout.createSequentialGroup()
+                                        .addComponent(jLabel32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(JT_CentroVacunacion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, IF_AdminLayout.createSequentialGroup()
+                                        .addComponent(jLabel33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(JT_DiaHoraCita, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, IF_AdminLayout.createSequentialGroup()
+                                        .addGap(306, 306, 306)
+                                        .addComponent(JT_NroSerieDosisAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(IF_AdminLayout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JT_Paciente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(193, 193, 193)))
+                .addGap(63, 63, 63))
+        );
+        IF_AdminLayout.setVerticalGroup(
+            IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IF_AdminLayout.createSequentialGroup()
+                .addComponent(jLabel28)
+                .addGap(59, 59, 59)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(JT_CodigoCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_BuscarCita))
+                .addGap(41, 41, 41)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JT_CodigoRefuerzo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31))
+                .addGap(41, 41, 41)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(JT_CentroVacunacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(JT_DiaHoraCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(JT_NroSerieDosisAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(JT_Paciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(76, 76, 76)
+                .addGroup(IF_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_NuevaCita)
+                    .addComponent(JB_GuardarActualizarCita))
+                .addGap(91, 91, 91))
+        );
+
         getContentPane().add(IF_Admin);
 
         IF_Consultas.setClosable(true);
@@ -379,6 +795,11 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         JM_Paciente.setText("Paciente");
         JM_Paciente.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        JM_Paciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_PacienteActionPerformed(evt);
+            }
+        });
 
         MI_Paciente.setText("Paciente");
         MI_Paciente.addActionListener(new java.awt.event.ActionListener() {
@@ -392,6 +813,11 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         JM_Laboratorio.setText("Laboratorio");
         JM_Laboratorio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        JM_Laboratorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_LaboratorioActionPerformed(evt);
+            }
+        });
 
         MI_lab.setText("Laboratorio");
         MI_lab.addActionListener(new java.awt.event.ActionListener() {
@@ -643,10 +1069,13 @@ public class VacunarGUI extends javax.swing.JFrame {
             limpiarCampos(IF_Paciente, LB_EstadoPaciente);
         }
     }//GEN-LAST:event_BTN_NuevoPacienteActionPerformed
-
+   
+    
     private void BTN_GuardarActualizarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActualizarPacienteActionPerformed
 
         CiudadanoData ciuData = new CiudadanoData();
+
+        System.out.println("Botón Guardar/Actualizar presionado"); // Mensaje de depuración
 
         String dni = JT_DNI.getText();
         String apellido = JT_Apellido.getText();
@@ -657,28 +1086,43 @@ public class VacunarGUI extends javax.swing.JFrame {
         String celular = JT_Celular.getText();
         String responsableLegal = JT_ResponsableLegal.getText();
         String edad = JT_Edad.getText();
-        
-        boolean esValido = esNumeroDNI(dni);
 
-        
+        System.out.println("DNI: " + dni); // Mensaje de depuración
+        System.out.println("Edad: " + edad); // Mensaje de depuración
 
-        if (esValido && validarCamposString(JT_Nombre, JT_Apellido)) {
+        boolean dniValido = esNumeroDNI(dni);
+        boolean edadValida = esNumeroValido(edad);
+        boolean camposValidos = validarCamposString(JT_Nombre, JT_Apellido);
+
+        if (dniValido && edadValida && camposValidos) {
             try {
+                System.out.println("Validaciones exitosas"); // Mensaje de depuración
 
-                boolean estadoPaciente = RB_EstadoPaciente.isSelected(); //Verifico que el estado del radioButton según el estado del alumno
-
+                boolean estadoPaciente = RB_EstadoPaciente.isSelected();
                 Ciudadano citizen = new Ciudadano(Integer.parseInt(dni), nombre, apellido, email, celular, patologia, ocupacion, Integer.parseInt(edad), responsableLegal, estadoPaciente);
-                ciuData.guardarCiudadano(citizen);
-                limpiarCampos(IF_Paciente, LB_EstadoPaciente);
 
+                if (ciuData.existeCiudadano(Integer.parseInt(dni))) {
+                    ciuData.modificarCiudadano(citizen);
+                    System.out.println("Ciudadano existente, se modificó"); // Mensaje de depuración
+                } else {
+                    ciuData.guardarCiudadano(citizen);
+                    JOptionPane.showMessageDialog(null, "Paciente añadido con éxito.");
+                    System.out.println("Ciudadano nuevo, se guardó"); // Mensaje de depuración
+                }
+
+                limpiarCampos(IF_Paciente, LB_EstadoPaciente);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Verifica que los campos de edad y DNI sean números válidos.");
+                System.err.println("Excepción NumberFormatException: " + e.getMessage()); // Mensaje de depuración
             } catch (NullPointerException e) {
                 JOptionPane.showMessageDialog(null, "No corresponde guardar estos tipos de datos.");
+                System.err.println("Excepción NullPointerException: " + e.getMessage()); // Mensaje de depuración
             }
-
         } else {
-            JOptionPane.showMessageDialog(null, "Error al llenar formulario\nVerifica los campos y que sean correctos.");
+            JOptionPane.showMessageDialog(null, "Error al llenar el formulario.\nVerifica los campos y asegúrate de que sean correctos.");
         }
     }//GEN-LAST:event_BTN_GuardarActualizarPacienteActionPerformed
+
 
     private void BTN_BuscarVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarVacunaActionPerformed
         // TODO add your handling code here:
@@ -733,6 +1177,16 @@ public class VacunarGUI extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_RB_AplicacionVacunaActionPerformed
 
+
+    private void JM_LaboratorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_LaboratorioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JM_LaboratorioActionPerformed
+
+    private void JM_PacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_PacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JM_PacienteActionPerformed
+            
+
     private void limpiarCampos(JInternalFrame internalFrame, JLabel labelALimpiar) {
         if (internalFrame != null) {
             Component[] components = internalFrame.getContentPane().getComponents();
@@ -752,10 +1206,11 @@ public class VacunarGUI extends javax.swing.JFrame {
             }
         }
     }
-
-    public static boolean esNumeroDNI(String str) {
+    
+    public static boolean esNumeroValido(String str) {
 
         if (str == null || str.isEmpty()) { // Evalúa que no sea un campo vacío
+            
             return false;
         }
 
@@ -767,21 +1222,49 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         try {
             int dni = Integer.parseInt(str); // Intenta convertir a entero.
-            return dni > 4000000 && dni < 99999999;
+            return dni > 0 && dni < 150;
         } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Campo Edad debe contener un valor acorde.");
+            return false; // No se pudo convertir a entero.
+        }
+    }
+    
+    public static boolean esNumeroDNI(String str) {
+
+        if (str == null || str.isEmpty()) { // Evalúa que no sea un campo vacío
+            JOptionPane.showMessageDialog(null, "Campo DNI vacío.");
+            return false;
+        }
+
+        for (char c : str.toCharArray()) { // Evalúa que no contenga carácteres, uso un for each para eso
+            if (!Character.isDigit(c)) {
+                JOptionPane.showMessageDialog(null, "Campo DNI debe contener números.");
+                return false; // No es un número válido.
+            }
+        }
+
+        try {
+            int dni = Integer.parseInt(str); // Intenta convertir a entero.
+            return dni > 4000000 && dni < 999999999;
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Campo DNI debe contener un valor acorde.");
             return false; // No se pudo convertir a entero.
         }
     }
 
-    public boolean validarCamposInt(JTextField campoNumerico) {
-        String textoCampoNumerico = campoNumerico.getText();
-        boolean contieneSoloNumeros = contieneSoloNumeros(textoCampoNumerico);
-        if (!contieneSoloNumeros) {
-            JOptionPane.showMessageDialog(null, "Año debe contener solo números.");
-            return false;
+    public boolean validarCamposString(JTextField... campos) {
+        for (JTextField campo : campos) {
+            String textoCampo = campo.getText().trim(); // Elimina espacios en blanco al principio y al final.
+
+            if (textoCampo.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Los campos no deben estar vacíos. Verificar.");
+                return false;
+            }
         }
-        return true;
+
+        return true; // Todos los campos son válidos.
     }
+
 
     public boolean contieneLetras(String texto) {
         for (char c : texto.toCharArray()) {
@@ -838,6 +1321,12 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JInternalFrame IF_Laboratorio;
     private javax.swing.JInternalFrame IF_Paciente;
     private javax.swing.JInternalFrame IF_Vacuna;
+    private javax.swing.JButton JB_BuscarCita;
+    private javax.swing.JButton JB_BuscarLaboratorio;
+    private javax.swing.JButton JB_GuardarActualizarCita;
+    private javax.swing.JButton JB_GuardarActualizarLaboratorio;
+    private javax.swing.JButton JB_NuevaCita;
+    private javax.swing.JButton JB_NuevoLaboratorio;
     private javax.swing.JMenu JM_Admin;
     private javax.swing.JMenu JM_Ayuda;
     private javax.swing.JMenu JM_Consultas;
@@ -848,20 +1337,48 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Vacuna;
     private javax.swing.JTextField JT_Apellido;
     private javax.swing.JTextField JT_Celular;
+
     private javax.swing.JTextField JT_CuitLaboratorio;
+
+    private javax.swing.JTextField JT_CentroVacunacion;
+    private javax.swing.JTextField JT_CodigoCita;
+    private javax.swing.JTextField JT_CodigoRefuerzo;
+    private javax.swing.JTextField JT_CuilLabVacuna;
+    private javax.swing.JTextField JT_Cuit;
+
     private javax.swing.JTextField JT_DNI;
+    private javax.swing.JTextField JT_DiaHoraCita;
+    private javax.swing.JTextField JT_DomicilioComercial;
     private javax.swing.JTextField JT_Edad;
     private javax.swing.JTextField JT_Email;
+
     private javax.swing.JTextField JT_MarcaVacuna1;
     private javax.swing.JTextField JT_MedidaVacuna;
     private javax.swing.JTextField JT_Nombre;
     private javax.swing.JTextField JT_NombreVacuna;
     private javax.swing.JTextField JT_NroSerieDosis;
+
+    private javax.swing.JTextField JT_MailLaboratorio;
+    private javax.swing.JTextField JT_MarcaVacuna;
+    private javax.swing.JTextField JT_MedidaAplicar;
+    private javax.swing.JTextField JT_Nombre;
+    private javax.swing.JTextField JT_NombreLaboratorio;
+    private javax.swing.JTextField JT_NombreVacuna;
+    private javax.swing.JTextField JT_NroSerieDosisAdmin;
+    private javax.swing.JTextField JT_NumeroSerieVacuna;
+
     private javax.swing.JTextField JT_Ocupacion;
+    private javax.swing.JTextField JT_Paciente;
+    private javax.swing.JTextField JT_Pais;
     private javax.swing.JTextField JT_Patologia;
     private javax.swing.JTextField JT_ResponsableLegal;
+
     private javax.swing.JTextField JT_VencimientoVacuna;
     private javax.swing.JLabel LB_AplicacionVacuna;
+
+    private javax.swing.JTextField JT_TelefonoLaboratorio;
+    private javax.swing.JTextField JT_VencimientoLote;
+
     private javax.swing.JLabel LB_EstadoPaciente;
     private javax.swing.JLabel LB_EstadoPaciente1;
     private javax.swing.JMenuItem MI_Ayuda;
@@ -878,7 +1395,14 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_lab;
     private javax.swing.JRadioButton RB_AplicacionVacuna;
     private javax.swing.JRadioButton RB_EstadoPaciente;
+
     private javax.swing.JRadioButton RB_EstadoPaciente1;
+
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -888,11 +1412,30 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+
+
+    private javax.swing.JLabel jLabel18;
+
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

@@ -35,7 +35,7 @@ public class CitaVacunacionData {
         }
     }
     
-    public CitaVacunacion buscarTurnoPorDni(int dniCiudadano) {
+    /*public CitaVacunacion buscarTurnoPorDni(int dniCiudadano) {
          lab = null;
         String sql = "SELECT * FROM laboratorio WHERE dniCiudadano=?";
         PreparedStatement ps = null;
@@ -62,7 +62,7 @@ public class CitaVacunacionData {
             System.out.println("Error: " + ex);
         }
         return lab;
-    }
+    }*/
     
 }
 //guardar cita 
