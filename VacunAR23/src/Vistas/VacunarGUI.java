@@ -6,13 +6,10 @@
 package Vistas;
 
 import AccesoADatos.CiudadanoData;
-import AccesoADatos.VacunaData;
 import Entidades.Ciudadano;
-import Entidades.Vacuna;
 import com.formdev.flatlaf.intellijthemes.FlatCarbonIJTheme;
 import java.awt.Color;
 import java.awt.Component;
-import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.util.ArrayList;
@@ -75,8 +72,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         BTN_NuevoPaciente = new javax.swing.JButton();
         RB_EstadoPaciente = new javax.swing.JRadioButton();
         LB_EstadoPaciente = new javax.swing.JLabel();
-        LB_EstadoPaciente1 = new javax.swing.JLabel();
-        RB_EstadoPaciente1 = new javax.swing.JRadioButton();
         IF_Laboratorio = new javax.swing.JInternalFrame();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -95,27 +90,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         JT_MailLaboratorio = new javax.swing.JTextField();
         JT_TelefonoLaboratorio = new javax.swing.JTextField();
         IF_Vacuna = new javax.swing.JInternalFrame();
-
-        jLabel9 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        JT_NroSerieDosis = new javax.swing.JTextField();
-        JT_NombreVacuna = new javax.swing.JTextField();
-        JT_VencimientoVacuna = new javax.swing.JTextField();
-        JT_CuitLaboratorio = new javax.swing.JTextField();
-        JT_MedidaVacuna = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        BTN_BuscarVacuna = new javax.swing.JButton();
-        BTN_GuardarActualizarVacuna = new javax.swing.JButton();
-        BTN_NuevaVacuna = new javax.swing.JButton();
-        RB_AplicacionVacuna = new javax.swing.JRadioButton();
-        LB_AplicacionVacuna = new javax.swing.JLabel();
-        JT_MarcaVacuna1 = new javax.swing.JTextField();
-
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -134,7 +108,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         JT_MedidaAplicar = new javax.swing.JTextField();
         JT_VencimientoLote = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
-
         IF_Admin = new javax.swing.JInternalFrame();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -276,10 +249,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         RB_EstadoPaciente.setText("Activo");
         IF_Paciente.getContentPane().add(RB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 80, -1));
         IF_Paciente.getContentPane().add(LB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 190, 30));
-        IF_Paciente.getContentPane().add(LB_EstadoPaciente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 190, 30));
-
-        RB_EstadoPaciente1.setText("Activo");
-        IF_Paciente.getContentPane().add(RB_EstadoPaciente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 80, -1));
 
         getContentPane().add(IF_Paciente);
 
@@ -410,86 +379,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Vacuna.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Vacuna.setVisible(true);
 
-        IF_Vacuna.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("VACUNA");
-        IF_Vacuna.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 868, 94));
-
-        jLabel14.setText("NUMERO SERIE");
-        IF_Vacuna.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 90, 40));
-
-        jLabel15.setText("NOMBRE");
-        IF_Vacuna.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 60, 40));
-
-        jLabel16.setText("MARCA");
-        IF_Vacuna.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 50, 40));
-
-        jLabel17.setText("VENCIMIENTO");
-        IF_Vacuna.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 80, 40));
-
-        JT_NroSerieDosis.setColumns(1);
-        IF_Vacuna.getContentPane().add(JT_NroSerieDosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 180, 30));
-
-        JT_NombreVacuna.setColumns(1);
-        IF_Vacuna.getContentPane().add(JT_NombreVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 180, 30));
-
-        JT_VencimientoVacuna.setColumns(1);
-        IF_Vacuna.getContentPane().add(JT_VencimientoVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 180, 30));
-
-        JT_CuitLaboratorio.setColumns(1);
-        IF_Vacuna.getContentPane().add(JT_CuitLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 180, 30));
-
-        JT_MedidaVacuna.setColumns(1);
-        IF_Vacuna.getContentPane().add(JT_MedidaVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 180, 30));
-
-        jLabel19.setText("CUIT LABORATORIO");
-        IF_Vacuna.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 110, 40));
-
-        jLabel20.setText("MEDIDA");
-        IF_Vacuna.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 50, 40));
-
-        jLabel21.setText("APLICACION");
-        IF_Vacuna.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 80, 40));
-
-        BTN_BuscarVacuna.setText("BUSCAR VACUNA");
-        BTN_BuscarVacuna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_BuscarVacunaActionPerformed(evt);
-            }
-        });
-        IF_Vacuna.getContentPane().add(BTN_BuscarVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 112, 340, 40));
-
-        BTN_GuardarActualizarVacuna.setText("GUARDAR | ACTUALIZAR");
-        BTN_GuardarActualizarVacuna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_GuardarActualizarVacunaActionPerformed(evt);
-            }
-        });
-        IF_Vacuna.getContentPane().add(BTN_GuardarActualizarVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, 280, 60));
-
-        BTN_NuevaVacuna.setText("NUEVA VACUNA");
-        BTN_NuevaVacuna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_NuevaVacunaActionPerformed(evt);
-            }
-        });
-        IF_Vacuna.getContentPane().add(BTN_NuevaVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 280, 60));
-
-        RB_AplicacionVacuna.setText("Realizada");
-        RB_AplicacionVacuna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RB_AplicacionVacunaActionPerformed(evt);
-            }
-        });
-        IF_Vacuna.getContentPane().add(RB_AplicacionVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 80, -1));
-        IF_Vacuna.getContentPane().add(LB_AplicacionVacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 190, 30));
-
-        JT_MarcaVacuna1.setColumns(1);
-        IF_Vacuna.getContentPane().add(JT_MarcaVacuna1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 180, 30));
-
-
         jLabel20.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel20.setText("VACUNA");
 
@@ -617,7 +506,6 @@ public class VacunarGUI extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addGap(41, 41, 41))
         );
-
 
         getContentPane().add(IF_Vacuna);
 
@@ -1123,61 +1011,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BTN_GuardarActualizarPacienteActionPerformed
 
-
-    private void BTN_BuscarVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BuscarVacunaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BTN_BuscarVacunaActionPerformed
-
-    private void BTN_GuardarActualizarVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_GuardarActualizarVacunaActionPerformed
-        // boton guardar vacuna
-        VacunaData vacuData = new VacunaData();
-        String nroSerieDosis = JT_NroSerieDosis.getText();
-        String cuitLaboratorio = JT_CuitLaboratorio.getText();
-        String nombreVacuna = JT_NombreVacuna.getText();
-        String marca = JT_VencimientoVacuna.getText();
-        String medida = JT_MedidaVacuna.getText();
-        String vencimiento = JT_VencimientoVacuna.getText();
-        String aplicacion = RB_AplicacionVacuna.getText();
-        
-       
-        boolean validoNroSerie = validarCamposInt(JT_NroSerieDosis);
-        boolean validoCuit = validarCamposInt(JT_CuitLaboratorio);
-        
-        
-        if (validoNroSerie && validoCuit) {
-            try {
-           
-                Vacuna vacu = new Vacuna(Integer.parseInt(nroSerieDosis), Integer.parseInt(cuitLaboratorio), nombreVacuna, marca, Double.parseDouble(medida), LocalDate.parse(vencimiento), true);
-            
-                vacuData.guardarVacuna(vacu);
-                limpiarCampos(IF_Vacuna, LB_AplicacionVacuna);
-
-            } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, "No corresponde guardar estos tipos de datos.");
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al llenar formulario\nVerifica los campos y que sean correctos.");
-        }
-         
-       
-    }//GEN-LAST:event_BTN_GuardarActualizarVacunaActionPerformed
-
-    private void BTN_NuevaVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_NuevaVacunaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BTN_NuevaVacunaActionPerformed
-
-    private void RB_AplicacionVacunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RB_AplicacionVacunaActionPerformed
-        boolean aplicacion = RB_AplicacionVacuna.isSelected();
-    
-    if (aplicacion) {
-        JOptionPane.showMessageDialog(null, "La vacuna ha sido aplicada.");
-    } else {
-        JOptionPane.showMessageDialog(null, "La vacuna no ha sido aplicada.");
-    }
-    }//GEN-LAST:event_RB_AplicacionVacunaActionPerformed
-
-
     private void JM_LaboratorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_LaboratorioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JM_LaboratorioActionPerformed
@@ -1186,7 +1019,6 @@ public class VacunarGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JM_PacienteActionPerformed
             
-
     private void limpiarCampos(JInternalFrame internalFrame, JLabel labelALimpiar) {
         if (internalFrame != null) {
             Component[] components = internalFrame.getContentPane().getComponents();
@@ -1310,10 +1142,7 @@ public class VacunarGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTN_BuscarPaciente;
-    private javax.swing.JButton BTN_BuscarVacuna;
     private javax.swing.JButton BTN_GuardarActualizarPaciente;
-    private javax.swing.JButton BTN_GuardarActualizarVacuna;
-    private javax.swing.JButton BTN_NuevaVacuna;
     private javax.swing.JButton BTN_NuevoPaciente;
     private javax.swing.JInternalFrame IF_Admin;
     private javax.swing.JInternalFrame IF_Ayuda;
@@ -1337,27 +1166,16 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Vacuna;
     private javax.swing.JTextField JT_Apellido;
     private javax.swing.JTextField JT_Celular;
-
-    private javax.swing.JTextField JT_CuitLaboratorio;
-
     private javax.swing.JTextField JT_CentroVacunacion;
     private javax.swing.JTextField JT_CodigoCita;
     private javax.swing.JTextField JT_CodigoRefuerzo;
     private javax.swing.JTextField JT_CuilLabVacuna;
     private javax.swing.JTextField JT_Cuit;
-
     private javax.swing.JTextField JT_DNI;
     private javax.swing.JTextField JT_DiaHoraCita;
     private javax.swing.JTextField JT_DomicilioComercial;
     private javax.swing.JTextField JT_Edad;
     private javax.swing.JTextField JT_Email;
-
-    private javax.swing.JTextField JT_MarcaVacuna1;
-    private javax.swing.JTextField JT_MedidaVacuna;
-    private javax.swing.JTextField JT_Nombre;
-    private javax.swing.JTextField JT_NombreVacuna;
-    private javax.swing.JTextField JT_NroSerieDosis;
-
     private javax.swing.JTextField JT_MailLaboratorio;
     private javax.swing.JTextField JT_MarcaVacuna;
     private javax.swing.JTextField JT_MedidaAplicar;
@@ -1366,21 +1184,14 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JTextField JT_NombreVacuna;
     private javax.swing.JTextField JT_NroSerieDosisAdmin;
     private javax.swing.JTextField JT_NumeroSerieVacuna;
-
     private javax.swing.JTextField JT_Ocupacion;
     private javax.swing.JTextField JT_Paciente;
     private javax.swing.JTextField JT_Pais;
     private javax.swing.JTextField JT_Patologia;
     private javax.swing.JTextField JT_ResponsableLegal;
-
-    private javax.swing.JTextField JT_VencimientoVacuna;
-    private javax.swing.JLabel LB_AplicacionVacuna;
-
     private javax.swing.JTextField JT_TelefonoLaboratorio;
     private javax.swing.JTextField JT_VencimientoLote;
-
     private javax.swing.JLabel LB_EstadoPaciente;
-    private javax.swing.JLabel LB_EstadoPaciente1;
     private javax.swing.JMenuItem MI_Ayuda;
     private javax.swing.JMenuItem MI_Dia;
     private javax.swing.JMenuItem MI_Labs;
@@ -1393,16 +1204,11 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_Turnos;
     private javax.swing.JMenuItem MI_Vac;
     private javax.swing.JMenuItem MI_lab;
-    private javax.swing.JRadioButton RB_AplicacionVacuna;
     private javax.swing.JRadioButton RB_EstadoPaciente;
-
-    private javax.swing.JRadioButton RB_EstadoPaciente1;
-
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
-
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1412,15 +1218,11 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-
-
     private javax.swing.JLabel jLabel18;
-
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1429,7 +1231,6 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
