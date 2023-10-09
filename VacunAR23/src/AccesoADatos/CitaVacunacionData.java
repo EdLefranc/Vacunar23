@@ -40,12 +40,11 @@ public class CitaVacunacionData {
             System.out.println("Error al guardar la cita de vacunación: " + e.getMessage());
         }
     }
-<<<<<<< Updated upstream
-    
-    /*public CitaVacunacion buscarTurnoPorDni(int dniCiudadano) {
+   
+    public CitaVacunacion buscarTurnoPorDni(int dniCiudadano) {
          lab = null;
         String sql = "SELECT * FROM laboratorio WHERE dniCiudadano=?";
-=======
+
 
     public CitaVacunacion buscarTurnoPorDniCiudadano(int dniCiudadano) {
         CitaVacunacion turno = null;
@@ -54,7 +53,7 @@ public class CitaVacunacionData {
              "JOIN vacuna ON turnovacunacion.nroSerieDosis = vacuna.nroSerieDosis " +
              "WHERE turnovacunacion.dniCiudadano = ?";
 
->>>>>>> Stashed changes
+
         PreparedStatement ps = null;
 
         try {
@@ -162,11 +161,11 @@ public class CitaVacunacionData {
             JOptionPane.showMessageDialog(null, "Error al eliminar el turno de vacunación: " + ex.getMessage());
             System.out.println("Error: " + ex);
         }
-<<<<<<< Updated upstream
+
         return lab;
-    }*/
-=======
     }
->>>>>>> Stashed changes
+
+    }
+
     
 }

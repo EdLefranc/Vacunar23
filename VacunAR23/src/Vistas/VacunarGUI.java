@@ -28,7 +28,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         ocultarIFrames();
     }
-
+    
     public void ocultarIFrames() {
         IF_Paciente.setVisible(false);
         IF_Laboratorio.setVisible(false);
@@ -37,7 +37,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Consultas.setVisible(false);
         IF_Ayuda.setVisible(false);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1213,9 +1213,9 @@ public class VacunarGUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
+        
         FlatCarbonIJTheme.setup();
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
