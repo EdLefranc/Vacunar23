@@ -72,11 +72,13 @@ public class VacunarGUI extends javax.swing.JFrame {
         BTN_NuevoPaciente = new javax.swing.JButton();
         RB_EstadoPaciente = new javax.swing.JRadioButton();
         LB_EstadoPaciente = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         IF_Laboratorio = new javax.swing.JInternalFrame();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+<<<<<<< Updated upstream
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -89,6 +91,22 @@ public class VacunarGUI extends javax.swing.JFrame {
         JT_DomicilioComercial = new javax.swing.JTextField();
         JT_MailLaboratorio = new javax.swing.JTextField();
         JT_TelefonoLaboratorio = new javax.swing.JTextField();
+=======
+        JT_NombreLab = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        JT_EMailLab = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        JT_CuitLab = new javax.swing.JTextField();
+        JT_PaisLab = new javax.swing.JTextField();
+        JT_DomComLab = new javax.swing.JTextField();
+        JT_TelLab = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        BTN_GuardarLab = new javax.swing.JButton();
+        BTN_NuevoLab = new javax.swing.JButton();
+>>>>>>> Stashed changes
         IF_Vacuna = new javax.swing.JInternalFrame();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -169,58 +187,58 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Paciente.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 868, 94));
 
         jLabel4.setText("DNI");
-        IF_Paciente.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 20, 40));
+        IF_Paciente.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 20, 40));
 
         JT_Ocupacion.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Ocupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 180, 30));
 
         jLabel5.setText("NOMBRE");
-        IF_Paciente.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 50, 40));
+        IF_Paciente.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 50, 40));
 
         jLabel6.setText("EMAIL");
-        IF_Paciente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 40, 40));
+        IF_Paciente.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 40, 40));
 
         jLabel7.setText("PATOLOGÍA");
-        IF_Paciente.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 70, 40));
+        IF_Paciente.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 70, 40));
 
         jLabel8.setText("OCUPACIÓN");
-        IF_Paciente.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 70, 40));
+        IF_Paciente.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 70, 40));
 
         JT_DNI.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 180, 30));
+        IF_Paciente.getContentPane().add(JT_DNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 180, 30));
 
         JT_Nombre.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 180, 30));
 
         JT_Email.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 180, 30));
 
         JT_Patologia.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Patologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Patologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 180, 30));
 
         JT_Apellido.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, 180, 30));
 
         JT_Edad.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 180, 30));
 
         JT_Celular.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_Celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 180, 30));
+        IF_Paciente.getContentPane().add(JT_Celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 180, 30));
 
         JT_ResponsableLegal.setColumns(1);
-        IF_Paciente.getContentPane().add(JT_ResponsableLegal, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 180, 30));
+        IF_Paciente.getContentPane().add(JT_ResponsableLegal, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 180, 30));
 
         jLabel10.setText("APELLIDO");
-        IF_Paciente.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 60, 40));
+        IF_Paciente.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 60, 40));
 
         jLabel11.setText("EDAD");
-        IF_Paciente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 40, 40));
+        IF_Paciente.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 40, 40));
 
         jLabel12.setText("CELULAR");
-        IF_Paciente.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 60, 40));
+        IF_Paciente.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 60, 40));
 
         jLabel13.setText("RESPONSABLE LEGAL");
-        IF_Paciente.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 130, 40));
+        IF_Paciente.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 130, 40));
 
         BTN_BuscarPaciente.setText("BUSCAR PACIENTE");
         BTN_BuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +246,7 @@ public class VacunarGUI extends javax.swing.JFrame {
                 BTN_BuscarPacienteActionPerformed(evt);
             }
         });
-        IF_Paciente.getContentPane().add(BTN_BuscarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 112, 340, 40));
+        IF_Paciente.getContentPane().add(BTN_BuscarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 340, 40));
 
         BTN_GuardarActualizarPaciente.setText("GUARDAR | ACTUALIZAR");
         BTN_GuardarActualizarPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +254,7 @@ public class VacunarGUI extends javax.swing.JFrame {
                 BTN_GuardarActualizarPacienteActionPerformed(evt);
             }
         });
-        IF_Paciente.getContentPane().add(BTN_GuardarActualizarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, 280, 60));
+        IF_Paciente.getContentPane().add(BTN_GuardarActualizarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 280, 60));
 
         BTN_NuevoPaciente.setText("NUEVO PACIENTE");
         BTN_NuevoPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -244,11 +262,14 @@ public class VacunarGUI extends javax.swing.JFrame {
                 BTN_NuevoPacienteActionPerformed(evt);
             }
         });
-        IF_Paciente.getContentPane().add(BTN_NuevoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 280, 60));
+        IF_Paciente.getContentPane().add(BTN_NuevoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 280, 60));
 
         RB_EstadoPaciente.setText("Activo");
-        IF_Paciente.getContentPane().add(RB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 80, -1));
-        IF_Paciente.getContentPane().add(LB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 190, 30));
+        IF_Paciente.getContentPane().add(RB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 80, -1));
+        IF_Paciente.getContentPane().add(LB_EstadoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 190, 30));
+
+        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
+        IF_Paciente.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 820, 420));
 
         getContentPane().add(IF_Paciente);
 
@@ -256,6 +277,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         IF_Laboratorio.setTitle("Laboratorio");
         IF_Laboratorio.setPreferredSize(new java.awt.Dimension(870, 680));
         IF_Laboratorio.setVisible(true);
+<<<<<<< Updated upstream
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel9.setText("LABORATORIO");
@@ -371,6 +393,68 @@ public class VacunarGUI extends javax.swing.JFrame {
                     .addComponent(JB_GuardarActualizarLaboratorio))
                 .addGap(118, 118, 118))
         );
+=======
+        IF_Laboratorio.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("LABORATORIO");
+        IF_Laboratorio.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 860, 94));
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel14.setText("EMAIL");
+        IF_Laboratorio.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, -1, 30));
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel15.setText("DOMICILIO COMERCIAL");
+        IF_Laboratorio.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, 30));
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel16.setText("CUIT LABORATORIO");
+        IF_Laboratorio.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, 30));
+
+        JT_NombreLab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        JT_NombreLab.setText("NOMBRE LABORATORIO");
+        IF_Laboratorio.getContentPane().add(JT_NombreLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, 30));
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel18.setText("PAIS");
+        IF_Laboratorio.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 30));
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel19.setText("TELEFONO");
+        IF_Laboratorio.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, -1, 30));
+        IF_Laboratorio.getContentPane().add(JT_EMailLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 180, 30));
+        IF_Laboratorio.getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 170, 30));
+        IF_Laboratorio.getContentPane().add(JT_CuitLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 170, 30));
+        IF_Laboratorio.getContentPane().add(JT_PaisLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 170, 30));
+        IF_Laboratorio.getContentPane().add(JT_DomComLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 170, 30));
+        IF_Laboratorio.getContentPane().add(JT_TelLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 180, 30));
+
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jButton1.setText("BUSCAR LABORATORIO");
+        IF_Laboratorio.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 330, 90));
+
+        jLabel17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel17.setText("Datos del Laboratorio");
+        IF_Laboratorio.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 170, 30));
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel20.setAlignmentY(0.0F);
+        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
+        IF_Laboratorio.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 820, 300));
+
+        BTN_GuardarLab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BTN_GuardarLab.setText("GUARDAR | ACTUALIZAR");
+        IF_Laboratorio.getContentPane().add(BTN_GuardarLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, 270, 60));
+
+        BTN_NuevoLab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BTN_NuevoLab.setText("NUEVO LABORATORIO");
+        IF_Laboratorio.getContentPane().add(BTN_NuevoLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, 270, 60));
+>>>>>>> Stashed changes
 
         getContentPane().add(IF_Laboratorio);
 
@@ -679,7 +763,7 @@ public class VacunarGUI extends javax.swing.JFrame {
 
         jMenuBar1.setAlignmentX(0.0F);
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(682, 35));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(750, 35));
 
         JM_Paciente.setText("Paciente");
         JM_Paciente.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1143,6 +1227,8 @@ public class VacunarGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTN_BuscarPaciente;
     private javax.swing.JButton BTN_GuardarActualizarPaciente;
+    private javax.swing.JButton BTN_GuardarLab;
+    private javax.swing.JButton BTN_NuevoLab;
     private javax.swing.JButton BTN_NuevoPaciente;
     private javax.swing.JInternalFrame IF_Admin;
     private javax.swing.JInternalFrame IF_Ayuda;
@@ -1166,6 +1252,7 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenu JM_Vacuna;
     private javax.swing.JTextField JT_Apellido;
     private javax.swing.JTextField JT_Celular;
+<<<<<<< Updated upstream
     private javax.swing.JTextField JT_CentroVacunacion;
     private javax.swing.JTextField JT_CodigoCita;
     private javax.swing.JTextField JT_CodigoRefuerzo;
@@ -1174,12 +1261,19 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JTextField JT_DNI;
     private javax.swing.JTextField JT_DiaHoraCita;
     private javax.swing.JTextField JT_DomicilioComercial;
+=======
+    private javax.swing.JTextField JT_CuitLab;
+    private javax.swing.JTextField JT_DNI;
+    private javax.swing.JTextField JT_DomComLab;
+    private javax.swing.JTextField JT_EMailLab;
+>>>>>>> Stashed changes
     private javax.swing.JTextField JT_Edad;
     private javax.swing.JTextField JT_Email;
     private javax.swing.JTextField JT_MailLaboratorio;
     private javax.swing.JTextField JT_MarcaVacuna;
     private javax.swing.JTextField JT_MedidaAplicar;
     private javax.swing.JTextField JT_Nombre;
+<<<<<<< Updated upstream
     private javax.swing.JTextField JT_NombreLaboratorio;
     private javax.swing.JTextField JT_NombreVacuna;
     private javax.swing.JTextField JT_NroSerieDosisAdmin;
@@ -1191,6 +1285,14 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JTextField JT_ResponsableLegal;
     private javax.swing.JTextField JT_TelefonoLaboratorio;
     private javax.swing.JTextField JT_VencimientoLote;
+=======
+    private javax.swing.JLabel JT_NombreLab;
+    private javax.swing.JTextField JT_Ocupacion;
+    private javax.swing.JTextField JT_PaisLab;
+    private javax.swing.JTextField JT_Patologia;
+    private javax.swing.JTextField JT_ResponsableLegal;
+    private javax.swing.JTextField JT_TelLab;
+>>>>>>> Stashed changes
     private javax.swing.JLabel LB_EstadoPaciente;
     private javax.swing.JMenuItem MI_Ayuda;
     private javax.swing.JMenuItem MI_Dia;
@@ -1206,9 +1308,12 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_lab;
     private javax.swing.JRadioButton RB_EstadoPaciente;
     private javax.swing.JButton jButton1;
+<<<<<<< Updated upstream
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
+=======
+>>>>>>> Stashed changes
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1223,6 +1328,7 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+<<<<<<< Updated upstream
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1231,6 +1337,8 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+=======
+>>>>>>> Stashed changes
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1246,5 +1354,6 @@ public class VacunarGUI extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
