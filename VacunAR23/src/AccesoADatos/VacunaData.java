@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
+
 public class VacunaData {
 
     Conexion conex = new Conexion();
@@ -67,5 +68,32 @@ public class VacunaData {
         System.out.println("Resulado de busqueda de vacuna:\n" + vacu);
         return vacu;
 
+    }
+    public Vacuna modificarVacuna (Vacuna vacuna, int nroSerieDosis){
+        String sql = "UPDATE vacuna SET cuitLaboratorio = ?, nombreVacuna = ?, marca = ?, medida = ?, vencimiento = ?, aplicacion = ? WHERE nroSerieDosis = ?" + nroSerieDosis;
+         PreparedStatement ps = null;
+         try {
+            ps = conex.Conexion_Maria().prepareStatement(sql);
+            ps.setInt(1, vacuna.getCuitLaboratorio());            
+            ps.setString(2, vacuna.getNombreVacuna());
+            ps.setString(3, vacuna.getMarca());
+            ps.setDouble(4, vacuna.getMedida());            
+            ps.setString(5, vacuna.getVencimiento().toString());
+            ps.setBoolean(6, vacuna.isAplicacion());
+            ps.setInt(7, vacuna.getNroSerieDosis());
+           
+            int exito = ps.executeUpdate();
+
+            if (exito == 0) {
+                JOptionPane.showMessageDialog(null, "Vacuna modificada Exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "La vacuna no existe en los datos");
+            }
+        
+        } catch (SQLException ex) {
+            //JOptionPane.showMessageDialog(null, "Error al acceder a la vacunas "+ex.getMessage());
+            System.out.println("Error: " + ex);
+        } 
+         return vacuna; 
     }
 }
