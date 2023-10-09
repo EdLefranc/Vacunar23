@@ -24,19 +24,19 @@ public class VacunAR23 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Conexion conex = new Conexion();
+        Conexion conex = new Conexion();
         
-        Ciudadano citizen = new Ciudadano(40255063, "Darío", "Sergi", "dsergi@gamil.com", "155550630", "Ninguna", "Bombero", 25, true);
-        CiudadanoData ciuData = new CiudadanoData();
+        //Ciudadano citizen = new Ciudadano(40255063, "Darío", "Sergi", "dsergi@gamil.com", "155550630", "Ninguna", "Bombero", 25, true);
+        //CiudadanoData ciuData = new CiudadanoData();
         
         //Laboratorio lab = new Laboratorio(285006038, "GoldLabs", "Canadá", "+1 Rob Carlson 793 Mo", "goldlabs.center@glabs.com", "+923622804");
         //LaboratorioData labData = new LaboratorioData();
-        LocalDate fecha = LocalDate.of(2026, 8, 15);
-        Vacuna vacu = new Vacuna(64851, 3688547, "AliviarDolor", "FocusLab", 0.5, fecha, true);
-        VacunaData vacudata = new VacunaData();
+       // LocalDate fecha = LocalDate.of(2026, 8, 15);
+        //Vacuna vacu = new Vacuna(64851, 3688547, "AliviarDolor", "FocusLab", 0.5, fecha, true);
+        //VacunaData vacudata = new VacunaData();
         
-        //conex.Conexion_Maria();
-        //ciuData.guardarCiudadano(citizen);
+        conex.Conexion_Maria();
+       // ciuData.guardarCiudadano(citizen);
         //ciuData.buscarCiudadanoPorDni(39266240);
         //ciuData.listarCiudadanos();
         //ciuData.modificarCiudadano(citizen, 42266409);
@@ -44,7 +44,7 @@ public class VacunAR23 {
         //labData.guardarLaboratorio(lab);
         //labData.listarLaboratorios();
         //vacudata.guardarVacuna(vacu);
-        vacudata.obtenervacuna(64851);
+        //vacudata.obtenervacuna(64851);
         
     }
     

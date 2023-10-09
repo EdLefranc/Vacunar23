@@ -61,6 +61,7 @@ public class Ciudadano {
         this.estado = estado;
     }
 
+   
     public boolean isEstado() {
         return estado;
     }
@@ -140,7 +141,24 @@ public class Ciudadano {
     public void setResponsableLegal(String responsableLegal) {
         this.responsableLegal = responsableLegal;
     }
+public static boolean esNumeroDNI(String str) {
+        if (str == null || str.isEmpty()) { // Evalúa que no sea un campo vacío
+            return false;
+        }
 
+        for (char c : str.toCharArray()) { // Evalúa que no contenga carácteres, uso un for each
+            if (!Character.isDigit(c)) {
+                return false; // No es un número válido.
+            }
+        }
+
+        try {
+            int dni = Integer.parseInt(str); // Intenta convertir a entero.
+            return dni > 999999 && dni < 99999999;
+        } catch (NumberFormatException e) {
+            return false; // No se pudo convertir a entero.
+        }
+    }
     @Override
     public String toString() {
         return "| Ciudadano: | " + " dni: " + dni + "| nombre: " + nombre + "| apellido: " + apellido + "| celular:"
