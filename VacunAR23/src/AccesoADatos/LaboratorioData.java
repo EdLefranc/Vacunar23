@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AccesoADatos;
 
 import Entidades.Laboratorio;
@@ -37,11 +32,11 @@ public class LaboratorioData {
                 int filaCreada = ps.executeUpdate();
                 //ResultSet rs = ps.getGeneratedKeys();
                 if (filaCreada > 0) {                    
-                    //JOptionPane.showMessageDialog(null, "Paciente añadido con exito.");
+                    JOptionPane.showMessageDialog(null, "Laboratorio añadido con exito.");
                     System.out.println("Exito al guardar Lab!");
                     }
         } catch (SQLException e) {
-            //JOptionPane.showMessageDialog(null, "El paciente ya existe con estos datos.\nPrueba con 'modificar' algún dato.");
+            JOptionPane.showMessageDialog(null, "El laboratorio " + lab.getNombreLab() + " ya existe con estos datos.\nPrueba con 'modificar' algún dato.");
             System.out.println("Error: " + e);
         }
         
@@ -104,20 +99,20 @@ public class LaboratorioData {
     }
 
     public void modificarLaboratorio(Laboratorio lab, int cuitLaboratorio) {
-        String sql = "UPDATE laboratorio SET cuitLaboratorio = ?, nombreLab = ?, pais = ?, domComercial = ?, mail = ?, telefono = ? WHERE cuitLaboratorio = ?";
+        String sql = "UPDATE laboratorio SET nombreLab = ?, pais = ?, domComercial = ?, mail = ?, telefono = ? WHERE cuitLaboratorio = ?";
         PreparedStatement ps = null;
 
         try {
             ps = conex.Conexion_Maria().prepareStatement(sql);
-            ps.setInt(1, lab.getCuitLaboratorio());
-            ps.setString(2, lab.getNombreLab());
-            ps.setString(3, lab.getPais());
-            ps.setString(4, lab.getDomComercial());
-            ps.setString(5, lab.getMail());
-            ps.setString(6, lab.getTelefono());
+            
+            ps.setString(1, lab.getNombreLab());
+            ps.setString(2, lab.getPais());
+            ps.setString(3, lab.getDomComercial());
+            ps.setString(4, lab.getMail());
+            ps.setString(5, lab.getTelefono());
 
             // Aquí solo se necesita configurar el parámetro una vez en la cláusula WHERE
-            ps.setInt(7, cuitLaboratorio);
+            ps.setInt(6, cuitLaboratorio);
 
             int exito = ps.executeUpdate();
 
@@ -132,5 +127,24 @@ public class LaboratorioData {
             System.out.println("Error: " + ex);
         } 
     }
+    
+    public void cambiarEstadoLaboratorioo(int cuitLab) {
+        String sql = "UPDATE laboratorio SET actividad = NOT actividad WHERE cuitLaboratorio = ?";
+        try (PreparedStatement ps = conex.Conexion_Maria().prepareStatement(sql)) {
+            ps.setInt(1, cuitLab);
 
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Estado del laboratorio actualizado exitosamente.");
+                System.out.println("Estado del laboratorio actualizado exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se pudo actualizar el estado del laboratorio.");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar el estado del laboratorio: " + ex.getMessage());
+            System.out.println("Error: " + ex);
+        }
+    }
+    
 }
