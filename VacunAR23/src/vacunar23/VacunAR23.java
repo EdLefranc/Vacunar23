@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vacunar23;
 
 import AccesoADatos.CitaVacunacionData;
@@ -15,6 +10,7 @@ import Entidades.Ciudadano;
 import Entidades.Laboratorio;
 import Entidades.Vacuna;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  *
@@ -28,54 +24,46 @@ public class VacunAR23 {
     public static void main(String[] args) {
         Conexion conex = new Conexion();
         
-        //Ciudadano citizen = new Ciudadano(40255063, "Darío", "Sergi", "dsergi@gamil.com", "155550630", "Ninguna", "Bombero", 25, true);
-        //CiudadanoData ciuData = new CiudadanoData();
+        Ciudadano citizen = new Ciudadano(30475221, "Juliana", "Hernandez", "julianaher@gmail.com", "1569326510", "", "Deportista", 38, true);
+        CiudadanoData ciuData = new CiudadanoData();
         
-        Laboratorio lab = new Laboratorio(285006038, "GoldLabs", "Canadá", "+1 Rob Carlson 793 MoNTREAL", "goldlabs.center@glabs.com", "+923622804");
+        Laboratorio lab = new Laboratorio(284441288, "Dental Medrano", "Argentina", "Paraguay 436", "dmedrano@medrano.com", "+56395214", true);
         LaboratorioData labData = new LaboratorioData();
         
-        LocalDate fecha = LocalDate.of(2026, 8, 15);
-        Vacuna vacu = new Vacuna(23748, 302569785, "Garzol500", "HonLab", 0.5, fecha, true);
+        LocalDate fecha = LocalDate.of(2032, 10, 10);
+        LocalTime hora = LocalTime.of(10, 0);
+        Vacuna vacu = new Vacuna(24926, 302569785, "Vapulix", "HonLab", 0.25, fecha, true);
         VacunaData vacudata = new VacunaData();
         
-        CitaVacunacion turno = new CitaVacunacion(123, 35890004, 2, "OrenseLab", fecha, 20014);
+        CitaVacunacion turno = new CitaVacunacion(2334, citizen, "Dosis 1", "Centro TresaLab", fecha, hora, vacu, true);
         CitaVacunacionData citaVacuData = new CitaVacunacionData();
         
         
         //conex.Conexion_Maria();
         
         //ciuData.guardarCiudadano(citizen);
-        //Laboratorio lab = new Laboratorio(285006038, "GoldLabs", "Canadá", "+1 Rob Carlson 793 Mo", "goldlabs.center@glabs.com", "+923622804");
-        //LaboratorioData labData = new LaboratorioData();
-       // LocalDate fecha = LocalDate.of(2026, 8, 15);
-        //Vacuna vacu = new Vacuna(64851, 3688547, "AliviarDolor", "FocusLab", 0.5, fecha, true);
-        //VacunaData vacudata = new VacunaData();
-        
-        conex.Conexion_Maria();
-       // ciuData.guardarCiudadano(citizen);
-        //ciuData.buscarCiudadanoPorDni(39266240);
+        //ciuData.buscarCiudadanoPorDni(30475221);
         //ciuData.listarCiudadanos();
-        //ciuData.modificarCiudadano(citizen, 42266409);
-        //ciuData.eliminarCiudadano(22403720, true);
+        //ciuData.modificarCiudadano(citizen);
+        //ciuData.eliminarCiudadano(30475221, false);
         
         //labData.guardarLaboratorio(lab);
         //labData.listarLaboratorios();
-        //labData.buscarLaboratorioPorCuit(285006038); // debería devolver GoldLabs
-        //labData.modificarLaboratorio(lab, 285006038);
+        //labData.buscarLaboratorioPorCuit(252341934); // debería devolver Umbrella
+        //labData.modificarLaboratorio(lab, 284441288);
+                
         //vacudata.guardarVacuna(vacu);
-        //vacudata.obtenervacuna(64851);
-        
-        //vacudata.guardarVacuna(vacu);
-        //vacudata.obtenervacuna(64851);
+        //vacudata.obtenerVacuna(24926);
         //vacudata.listarVacunas();
-        //vacudata.modificarVacuna(23040, vacu);
+        //vacudata.modificarVacuna(vacu);
         //vacudata.actualizarEstadoVacuna(20014);
         
         //citaVacuData.guardarCitaVacunacion(turno);
-        //citaVacuData.buscarTurnoPorDniCiudadano(35890004);
+        //citaVacuData.buscarTurnoPorDniCiudadano(42055288); //ver por qué trae una vacuna entera en datos
         //citaVacuData.listarCitasVacunacion();
-        //citaVacuData.modificarCitasVacunacion(turno);
-        //citaVacuData.eliminarCitasVacunacion(123);
+//        citaVacuData.modificarCitasVacunacion(turno);
+        citaVacuData.eliminarCitasVacunacion(9128);
+        
     }
     
 }

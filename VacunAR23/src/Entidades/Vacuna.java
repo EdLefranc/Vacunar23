@@ -89,5 +89,9 @@ public class Vacuna {
     public String toString() {
         return "| Vacuna: " + "nroSerieDosis: " + nroSerieDosis + "| cuitLaboratorio: " + cuitLaboratorio + "| nombreVacuna: " + nombreVacuna + "| marca: " + marca + 
                 "| medida: " + medida + "| vencimiento: " + vencimiento + "| aplicacion: " + aplicacion + "| \n";
-    }    
+    }
+    
+    
+    
+    
 }

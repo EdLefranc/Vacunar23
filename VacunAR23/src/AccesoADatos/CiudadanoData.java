@@ -6,6 +6,7 @@
 package AccesoADatos;
 
 import Entidades.Ciudadano;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +23,7 @@ public class CiudadanoData {
     
     Conexion conex = new Conexion();
     
-    public void guardarCiudadano(Ciudadano ciudadano){
+    public void guardarCiudadano(Ciudadano ciudadano) throws SQLException{
     // Verificar si el ciudadano ya existe por DNI
     Ciudadano ciudadanoExistente = buscarCiudadanoPorDni(ciudadano.getDni());
     
@@ -46,7 +47,7 @@ public class CiudadanoData {
             ps.setString(7, ciudadano.getOcupacion());
             ps.setInt(8, ciudadano.getEdad());
             ps.setString(9, ciudadano.getResponsableLegal());
-            ps.setBoolean(10, true);
+            ps.setBoolean(10, ciudadano.isEstado());
             int filaCreada = ps.executeUpdate();
             
             if (filaCreada > 0) {                    
@@ -59,18 +60,17 @@ public class CiudadanoData {
             System.out.println("Error: " + e);
         }
     }
-}
-
+}   
     
-    
-    public Ciudadano buscarCiudadanoPorDni(int dni) {
+    public Ciudadano buscarCiudadanoPorDni(int dni) throws SQLException {
         Ciudadano citizen = null;
-        String sql = "SELECT * FROM ciudadano WHERE dni=?";
+        String sql = "SELECT dni, nombre, apellido, email, celular, patologia, ocupacion, edad, responsableLegal, estado FROM ciudadano WHERE dni=? AND (estado = 1 OR estado = 0)";
         PreparedStatement ps = null;
 
         try {
             ps = conex.Conexion_Maria().prepareStatement(sql);
             ps.setInt(1, dni);
+            
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -84,7 +84,8 @@ public class CiudadanoData {
                 citizen.setOcupacion(rs.getString("ocupacion"));
                 citizen.setEdad(rs.getInt("edad"));
                 citizen.setResponsableLegal(rs.getString("responsableLegal"));
-                citizen.setEstado(true);
+                citizen.setEstado(rs.getBoolean("estado"));
+
                 System.out.println(citizen);
             }
             ps.close();
@@ -115,7 +116,7 @@ public class CiudadanoData {
                     citizen.setOcupacion(rs.getString("ocupacion"));
                     citizen.setEdad(rs.getInt("edad"));
                     citizen.setResponsableLegal(rs.getString("responsableLegal"));
-                    citizen.setEstado(true);
+                    citizen.isEstado();
                     
                     ciudadanos.add(citizen);
                 }
@@ -131,34 +132,34 @@ public class CiudadanoData {
     
     
     public void modificarCiudadano(Ciudadano ciudadano) {
-        String sql = "UPDATE ciudadano SET nombre=?, apellido=?, email=?, celular=?, patologia=?, ocupacion=?, edad=?, responsableLegal=?, estado=? WHERE dni=?";
-        try {
-            PreparedStatement ps = conex.Conexion_Maria().prepareStatement(sql);
-            ps.setString(1, ciudadano.getNombre());
-            ps.setString(2, ciudadano.getApellido());
-            ps.setString(3, ciudadano.getEmail());
-            ps.setString(4, ciudadano.getCelular());
-            ps.setString(5, ciudadano.getPatologia());
-            ps.setString(6, ciudadano.getOcupacion());
-            ps.setInt(7, ciudadano.getEdad());
-            ps.setString(8, ciudadano.getResponsableLegal());
-            ps.setBoolean(9, ciudadano.isEstado());
-            ps.setInt(10, ciudadano.getDni());
+    String sql = "UPDATE ciudadano SET nombre=?, apellido=?, email=?, celular=?, patologia=?, ocupacion=?, edad=?, responsableLegal=?, estado=? WHERE dni=?";
+    try {
+        PreparedStatement ps = conex.Conexion_Maria().prepareStatement(sql);
+        ps.setString(1, ciudadano.getNombre());
+        ps.setString(2, ciudadano.getApellido());
+        ps.setString(3, ciudadano.getEmail());
+        ps.setString(4, ciudadano.getCelular());
+        ps.setString(5, ciudadano.getPatologia());
+        ps.setString(6, ciudadano.getOcupacion());
+        ps.setInt(7, ciudadano.getEdad());
+        ps.setString(8, ciudadano.getResponsableLegal());
+        ps.setBoolean(9, ciudadano.isEstado());
+        ps.setInt(10, ciudadano.getDni());
 
-            int exito = ps.executeUpdate();
+        int exito = ps.executeUpdate();
 
-            if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "Paciente modificado Exitosamente.");
-            } else {
-                JOptionPane.showMessageDialog(null, "El paciente no existe en los datos");
-            }
-
-            ps.close();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al modificar el ciudadano: " + ex.getMessage());
-            System.out.println("Error: " + ex);
+        if (exito == 1) {
+            JOptionPane.showMessageDialog(null, "Paciente modificado Exitosamente.");
+        } else {
+            JOptionPane.showMessageDialog(null, "El paciente no existe en los datos");
         }
+
+        ps.close();
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al modificar el ciudadano: " + ex.getMessage());
+        System.out.println("Error: " + ex);
     }
+}
 
     
     public void eliminarCiudadano(int dni, boolean estado){
@@ -179,48 +180,5 @@ public class CiudadanoData {
             System.out.println("Error: " + e);
         }
     }
-    
-    public boolean existeCiudadano(int dni) {
-        boolean existe = false;
-        try {
-            // Establece la conexión a tu base de datos aquí (por ejemplo, usando JDBC)
-
-            // Define la consulta SQL para buscar un ciudadano por su número de DNI
-            String sql = "SELECT COUNT(*) FROM ciudadano WHERE dni = ?";
-
-            // Crea una PreparedStatement
-            PreparedStatement ps = conex.Conexion_Maria().prepareStatement(sql);
-
-            // Establece el valor del parámetro DNI en la consulta
-            ps.setInt(1, dni);
-
-            // Ejecuta la consulta
-            ResultSet rs = ps.executeQuery();
-
-            // Verifica si se encontró algún resultado
-            if (rs.next()) {
-                int count = rs.getInt(1);
-                existe = (count > 0); // Si count es mayor que 0, el ciudadano existe
-
-                if (existe) {
-                    int opcion = JOptionPane.showConfirmDialog(null, "El DNI ya existe. ¿Deseas modificarlo?", "DNI Existente", JOptionPane.YES_NO_OPTION);
-                    if (opcion == JOptionPane.YES_OPTION) {
-                        // El usuario ha seleccionado modificar, aquí puedes realizar las acciones necesarias
-                    } else {
-                        // El usuario ha seleccionado no modificar, puedes manejarlo según tus necesidades
-                    }
-                }
-            }
-
-            // Cierra recursos (PreparedStatement, ResultSet, conexión, etc.) aquí
-
-        } catch (SQLException e) {
-            // Maneja las excepciones SQL aquí
-            e.printStackTrace();
-        }
-        return existe;
-    }
-
-    
     
 }

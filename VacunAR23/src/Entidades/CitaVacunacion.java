@@ -1,26 +1,66 @@
+
 package Entidades;
+
 import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 public class CitaVacunacion {
-
+    
     private int codCita;
-    private int dniCiudadano; // Cambiado de Ciudadano a int
-    private int codRefuerzo;
+    private Ciudadano ciudadano; //Relaciona con dni de ciudadano
+    private String codRefuerzo;    
     private String centroVacunacion;
     private LocalDate fechaHoraColoca;
-    private int nroSerieDosis; // Cambiado de Vacuna a int
-
+    private LocalTime hora;
+    private Vacuna nroSerieDosis; //Relaciona con nroSerieDosis de vacuna
+    private boolean turnoActivo;
+    
     public CitaVacunacion() {
     }
 
-    public CitaVacunacion(int codCita, int dniCiudadano, int codRefuerzo, String centroVacunacion, LocalDate fechaHoraColoca, int nroSerieDosis) {
-        this.codCita = codCita;
-        this.dniCiudadano = dniCiudadano;
+    public CitaVacunacion(Ciudadano ciudadano, String codRefuerzo, String centroVacunacion, LocalDate fechaHoraColoca, LocalTime hora, Vacuna nroSerieDosis, boolean turnoActivo) {
+        this.ciudadano = ciudadano;
         this.codRefuerzo = codRefuerzo;
         this.centroVacunacion = centroVacunacion;
         this.fechaHoraColoca = fechaHoraColoca;
+        this.hora = hora;
         this.nroSerieDosis = nroSerieDosis;
+        this.turnoActivo = turnoActivo;
     }
+    
+    
+    
+    public CitaVacunacion(int codCita, Ciudadano ciudadano, String codRefuerzo, String centroVacunacion, LocalDate fechaHoraColoca, LocalTime hora, Vacuna nroSerieDosis, boolean turnoActivo) {
+        this.codCita = codCita;
+        this.ciudadano = ciudadano;
+        this.codRefuerzo = codRefuerzo;        
+        this.centroVacunacion = centroVacunacion;
+        this.fechaHoraColoca = fechaHoraColoca;
+        this.hora = hora;
+        this.nroSerieDosis = nroSerieDosis;
+        this.turnoActivo = turnoActivo;
+    }
+
+    public boolean isTurnoActivo() {
+        return turnoActivo;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public void setTurnoActivo(boolean turnoActivo) {
+        this.turnoActivo = turnoActivo;
+    }
+
+//    public CitaVacunacion(int i, int i0, int i1, String orenseLab, LocalDate fecha, int i2) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public int getCodCita() {
         return codCita;
@@ -30,19 +70,19 @@ public class CitaVacunacion {
         this.codCita = codCita;
     }
 
-    public int getDniCiudadano() {
-        return dniCiudadano;
+    public Ciudadano getCiudadano() {
+        return ciudadano;
     }
 
-    public void setDniCiudadano(int dniCiudadano) {
-        this.dniCiudadano = dniCiudadano;
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano = ciudadano;
     }
 
-    public int getCodRefuerzo() {
+    public String getCodRefuerzo() {
         return codRefuerzo;
     }
 
-    public void setCodRefuerzo(int codRefuerzo) {
+    public void setCodRefuerzo(String codRefuerzo) {
         this.codRefuerzo = codRefuerzo;
     }
 
@@ -62,17 +102,23 @@ public class CitaVacunacion {
         this.fechaHoraColoca = fechaHoraColoca;
     }
 
-    public int getNroSerieDosis() {
+    public Vacuna getNroSerieDosis() {
         return nroSerieDosis;
     }
 
-    public void setNroSerieDosis(int nroSerieDosis) {
+    public void setNroSerieDosis(Vacuna nroSerieDosis) {
         this.nroSerieDosis = nroSerieDosis;
     }
 
     @Override
     public String toString() {
-        return "CitaVacunacion: " + " | codCita: " + codCita + " | dniCiudadano: " + dniCiudadano + " | codRefuerzo: " + codRefuerzo
-                + " | centroVacunacion: " + centroVacunacion + " | fecha y Hora turno: " + fechaHoraColoca + " | nroSerieDosis:" + nroSerieDosis + " |\n";
+        return "| CitaVacunacion: " + "codCita: " + codCita + " | ciudadano: " + ciudadano.getDni() + " | codRefuerzo: " + codRefuerzo 
+                + " | fechaHoraCita: " + " | centroVacunacion: " + centroVacunacion + " | fecha Colocación: " 
+                + fechaHoraColoca + " | hora: " + hora + " | nroSerieDosis: " + nroSerieDosis + " | estado: " + isTurnoActivo() + " | ";
     }
+    
+    
+    
+    
+    
 }
