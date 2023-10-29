@@ -130,7 +130,7 @@ public class VacunaData {
                 ps.setString(4, vacuna.getMarca());
                 ps.setDouble(5, vacuna.getMedida());
                 ps.setString(6, vacuna.getVencimiento().toString());
-                ps.setBoolean(7, vacuna.isAplicacion());
+                ps.setBoolean(7, true);
 
                 int filaCreada = ps.executeUpdate();
 

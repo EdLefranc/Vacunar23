@@ -29,7 +29,7 @@ public class CitaVacunacionData {
             ps.setString(5, citaVacunacion.getFechaHoraColoca().toString());
             ps.setString(6, citaVacunacion.getHora().toString());
             ps.setInt(7, citaVacunacion.getNroSerieDosis().getNroSerieDosis());
-            ps.setBoolean(8, citaVacunacion.isTurnoActivo());
+            ps.setBoolean(8, true);
 
             int filaCreada = ps.executeUpdate();
 
