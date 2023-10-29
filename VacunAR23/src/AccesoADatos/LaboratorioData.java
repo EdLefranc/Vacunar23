@@ -28,7 +28,7 @@ public class LaboratorioData {
                 ps.setString(4, lab.getDomComercial());
                 ps.setString(5, lab.getMail());                
                 ps.setString(6, lab.getTelefono());
-                ps.setBoolean(7, lab.isActivo());
+                ps.setBoolean(7, true);
                 
                 int filaCreada = ps.executeUpdate();
                 //ResultSet rs = ps.getGeneratedKeys();

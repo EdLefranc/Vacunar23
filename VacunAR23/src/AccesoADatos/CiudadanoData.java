@@ -47,7 +47,7 @@ public class CiudadanoData {
             ps.setString(7, ciudadano.getOcupacion());
             ps.setInt(8, ciudadano.getEdad());
             ps.setString(9, ciudadano.getResponsableLegal());
-            ps.setBoolean(10, ciudadano.isEstado());
+            ps.setBoolean(10, true);
             int filaCreada = ps.executeUpdate();
             
             if (filaCreada > 0) {                    
