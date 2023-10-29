@@ -10,17 +10,27 @@ public class Laboratorio {
     private String domComercial;
     private String mail;
     private String telefono;
+    private boolean activo;
 
     public Laboratorio() {
     }
 
-    public Laboratorio(int cuitLaboratorio, String nombreLab, String pais, String domComercial, String mail, String telefono) {
+    public Laboratorio(int cuitLaboratorio, String nombreLab, String pais, String domComercial, String mail, String telefono, boolean activo) {
         this.cuitLaboratorio = cuitLaboratorio;
         this.nombreLab = nombreLab;
         this.pais = pais;
         this.domComercial = domComercial;
         this.mail = mail;
         this.telefono = telefono;
+        this.activo = activo;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
     public int getCuitLaboratorio() {
@@ -74,7 +84,7 @@ public class Laboratorio {
     @Override
     public String toString() {
         return "| Laboratorio: " + " | cuitLaboratorio: " + cuitLaboratorio + "| nombreLab: " + nombreLab + "| pais=" + pais
-                + "\n| domComercial: " + domComercial + "| mail:" + mail + "| telefono:" + telefono 
+                + "\n| domComercial: " + domComercial + "| mail:" + mail + "| telefono:" + telefono + "| activo: " + activo
                 + " |\n---------------------------------------------------\n";
     }
     
