@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2023 a las 01:30:27
+-- Tiempo de generación: 30-10-2023 a las 00:35:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -52,7 +52,7 @@ INSERT INTO `ciudadano` (`dni`, `nombre`, `apellido`, `email`, `celular`, `patol
 (24442632, 'Graciela', 'Valda', NULL, '157000453', 'Hepatitis B', 'Policía', 45, NULL, 1),
 (27703700, 'LUIS', 'PIPO', 'pipoluis@correo.com', '1536258963', '', '', 45, '', 0),
 (27703720, 'Germán', 'Adler', 'germanadler@gmail.com', '1569362578', 'Ninguna', 'Marinero', 43, 'No Aplica', 0),
-(27703725, 'Eduardo Andrés', 'Cardozo', 'edulefranc@gmail.com', '152983615719', 'Ninguna', 'Profesional IT', 43, 'No Aplica', 1),
+(27703725, 'Eduardo Andrés', 'Cardozo', 'edulefranc@gmail.com', '152983615719', 'Ninguna', 'Profesional IT', 43, 'No Aplica', 0),
 (29320841, 'Laura', 'O\'Hara', 'lauraohara@hotmail.com.ar', '15396521', 'Diabetes', 'Gastrónoma', 40, 'n/a', 1),
 (30475221, 'Juliana', 'Hernandez', 'julianaher@gmail.com', '1569326510', '', 'Deportista', 38, NULL, 0),
 (32496224, 'Gabriela Alejandra', 'D Angelo', 'gabrieladan@gmail.com', '2983447912', 'no aplica', 'ama de casa', 37, 'no aplica', 1),
@@ -61,15 +61,19 @@ INSERT INTO `ciudadano` (`dni`, `nombre`, `apellido`, `email`, `celular`, `patol
 (35890004, 'Aldana', 'Jarnek', 'aldjarn@gmail.com', '153693698', 'Ninguna', 'Gastrónoma', 35, 'N/A', 1),
 (39266240, 'Sofía', 'Nuñez', 'snuñez@gmail.com', '1508236000', 'Gripe A', 'Sanidad', 39, NULL, 1),
 (40255063, 'Darío', 'Sergi', 'dsergi@gamil.com', '155550630', 'Ninguna', 'Bombero', 25, NULL, 1),
+(40789456, 'Javier', 'Firulais', 'kolombo@correo', '15487926', '', '', 30, '', 1),
 (42055288, 'Andrea', 'Gorostiaga', 'agoros@gamil.com', '150230630', 'Cardiopatía congenita', 'Sanidad', 22, NULL, 0),
 (42266409, 'Marianella', 'Delfos', 'marianadelfos@gmail.com', '150596690', 'Covid', NULL, 15, 'Mariana Delfos', 1),
+(42900600, 'Mikka', 'Holo', 'mikkaholo@correo.com', '152639874', '', '', 21, '', 1),
 (45678945, 'ehjdkhjk', 'jkljkld', 'rf@dfsf', '12312456', 'fdsfds', 'fdsf', 56, 'fsd', 1),
+(48358348, 'Anna', 'Dang', 'annadang@correo.com', '1536894512', '', '', 16, '', 0),
 (50693123, 'Victor', 'Rodriguez', 'vr@gmail.com', '1523568923', '', NULL, 2, 'María Juarez', 1),
 (50755089, 'Kaela', 'Karim', 'mariasolares@gmail.com', '1563891548', 'n/a', 'Ama de casa', 3, 'Maria Solares', 1),
 (52033822, 'Jerónimo', 'Francis', 'solangegimenez@yahoo.com.ar', '1569224033', 'no aplica', 'no aplica', 5, 'Solange Gimenez', 1),
 (52900600, 'Ancelmo', 'Gurrutia', 'gerardopaez@gmail.com', '15555600', 'Gripe común', NULL, 10, 'Gerardo Paez', 1),
 (56400230, 'Carlos', 'Gurrutia', 'estebangurrutia@yahoo.com.ar', '1523568956', 'N/A', 'N/A', 2, 'Esteban Gurrutia', 1),
-(58023688, 'Camila', 'DiPaolo', 'danielalula@gmail.com', '15200600', 'Triple', NULL, 5, 'Daniela Calula', 1);
+(58023688, 'Camila', 'DiPaolo', 'danielalula@gmail.com', '15200600', 'Triple', NULL, 5, 'Daniela Calula', 1),
+(92335737, 'Julio', 'Gonzalez', '', '15264859', '', '', 45, '', 1);
 
 -- --------------------------------------------------------
 
@@ -92,14 +96,18 @@ CREATE TABLE `laboratorio` (
 --
 
 INSERT INTO `laboratorio` (`cuitLaboratorio`, `nombreLab`, `pais`, `domComercial`, `mail`, `telefono`, `actividad`) VALUES
+(112233445, 'Fulgar Lab', 'Italia', 'La Testa 555', 'Fulgar@gmail.com.it', '123456789', 1),
+(123456789, 'Holand', 'Suiza', 'Longlaile Av 790', 'Holand@correo.com', '555599932', 1),
 (204567892, 'lab752', 'Inglaterra', 'lolo 456', 'glos@jiji.com', 'hjkghjk', 1),
+(235689230, 'PepeLab', 'Incalaperra', 'fafafa 456', 'pepelab@correo.com', '123456789', 1),
 (252341934, 'Umbrella', 'USA', 'Underground', 'umbrella.umbrella@revil.com', '2005559631', 1),
 (258961232, 'Salinas Lab', 'España', 'Las Palomas 845', 'salinaslab@correo.com', '56982244500', 0),
 (274561232, 'Tesla Drugs', 'USA', 'Park Av 795', 'tesladrugs@tesla.com', '+00058969321', 1),
 (284441288, 'Dental Medrano', 'Argentina', 'Paraguay 436', 'dmedrano@medrano.com', '+5439521426', 1),
 (285006038, 'Roemmers', 'Argentina', 'Carlos Calvo 1244', 'adminrommers@rommers.com', '+5465922804', 1),
 (302569785, 'HonLab', 'China', 'Zuang +223', 'honlab.honlab@tiang.com.chn', '2032567451', 0),
-(324469785, 'Pfizer', 'USA', 'Carpenter sth 156', 'Pfizer@lausa.com.ue', '295557003', 1);
+(324469785, 'Pfizer', 'USA', 'Carpenter sth 156', 'Pfizer@lausa.com.ue', '295557003', 1),
+(999999998, 'DeterrorLab', 'Rusia', 'calle oscura 666', 'deterrorlab@gmail.com.ru', '457891256', 0);
 
 -- --------------------------------------------------------
 
@@ -136,11 +144,15 @@ INSERT INTO `turnovacunacion` (`codCita`, `dniCiudadano`, `codRefuerzo`, `centro
 (9134, 40255063, 'DOSIS 1', 'Centro Oeste', '2023-10-31', '00:00:00', 23040, 1),
 (9135, 40255063, 'DOSIS 1', 'Centro Oeste', '2023-10-31', '00:00:00', 23040, 1),
 (9136, 32821249, 'DOSIS 1', 'Centro Norte', '2023-10-30', '11:15:00', 20014, 1),
-(9137, 58023688, 'DOSIS 1', 'Centro Norte', '2023-10-30', '08:30:00', 20014, 1),
+(9137, 58023688, 'DOSIS 1', 'Centro Norte', '2023-10-30', '08:30:00', 20014, 0),
 (9138, 27703725, 'DOSIS 1', 'Centro Norte', '2023-10-31', '09:00:00', 23040, 1),
 (9139, 32496224, 'DOSIS 1', 'Centro Norte', '2023-10-28', '09:15:00', 23040, 1),
 (9140, 17176162, 'DOSIS 1', 'Centro Norte', '2024-01-04', '09:30:00', 24926, 1),
-(9141, 32496224, 'DOSIS 2', 'Centro Sur', '2023-10-30', '08:45:00', 23748, 0);
+(9141, 32496224, 'DOSIS 2', 'Centro Sur', '2023-10-30', '08:45:00', 23748, 0),
+(9142, 17176162, 'NINGUNO', 'Centro Norte', '2023-11-14', '08:45:00', 23040, 0),
+(9143, 17176162, 'NINGUNO', 'Centro Sur', '2023-11-28', '09:30:00', 45000, 0),
+(9144, 48358348, 'NINGUNO', 'Centro Oeste', '2023-10-31', '08:45:00', 24926, 0),
+(9145, 58023688, 'NINGUNO', 'Centro Este', '2023-11-10', '10:00:00', 45000, 1);
 
 -- --------------------------------------------------------
 
@@ -187,10 +199,12 @@ CREATE TABLE `vacuna` (
 
 INSERT INTO `vacuna` (`nroSerieDosis`, `cuitLaboratorio`, `nombreVacuna`, `marca`, `medida`, `vencimiento`, `stock`, `aplicacion`) VALUES
 (20014, 252341934, 'V3', 'UV3X3', 0.185, '2026-10-14', 0, 0),
+(20028, 235689230, 'pepe250', 'Pepe Lab', 0.55, '2024-10-31', 1, 1),
 (23040, 302569785, 'Bexotolim', 'HonLab', 0.05, '2026-08-15', 0, 1),
 (23748, 302569785, 'Garzol500', 'HonLab', 0.5, '2026-08-15', 0, 1),
-(24926, 302569785, 'Vapulix', 'HonLab', 0.25, '2032-10-10', 0, 1),
-(40020, 274561232, 'TjoDO', 'Testal Vaccine', 0.5, '2024-10-30', 1, 1);
+(24926, 302569785, 'Vapulix', 'HonLab', 0.25, '2032-10-10', 25, 1),
+(40020, 274561232, 'TjoDO', 'Testal Vaccine', 0.5, '2024-10-30', 1, 1),
+(45000, 123456789, 'HOL25', 'Holand', 0.25, '2024-10-24', 1, 0);
 
 --
 -- Índices para tablas volcadas
@@ -238,7 +252,7 @@ ALTER TABLE `vacuna`
 -- AUTO_INCREMENT de la tabla `turnovacunacion`
 --
 ALTER TABLE `turnovacunacion`
-  MODIFY `codCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9142;
+  MODIFY `codCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9146;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
