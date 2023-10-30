@@ -1014,43 +1014,41 @@ public class VacunarGUI extends javax.swing.JFrame {
                 BTN_GuardarActualizarPaciente.setText("ACTUALIZAR");
                 int dniCiudadano = Integer.parseInt(dniPaciente);
                 Ciudadano ciudadano = ciuData.buscarCiudadanoPorDni(dniCiudadano);
-                if(ciudadano != null){
-                                    
-                    // Verifico si se encontró un paciente antes de mostrar los datos
-                    String nombre = ciudadano.getNombre();
-                    String apellido = ciudadano.getApellido();
-                    String email = ciudadano.getEmail();
-                    String celular = ciudadano.getCelular();
-                    String patologia = ciudadano.getPatologia();
-                    String ocupacion = ciudadano.getOcupacion();
-                    int edadPaciente = ciudadano.getEdad();                    
-                    String responsableLegal = ciudadano.getResponsableLegal();
-                    boolean estado = ciudadano.isEstado();                    
+                                                    
+                // Verifico si se encontró un paciente antes de mostrar los datos
+                String nombre = ciudadano.getNombre();
+                String apellido = ciudadano.getApellido();
+                String email = ciudadano.getEmail();
+                String celular = ciudadano.getCelular();
+                String patologia = ciudadano.getPatologia();
+                String ocupacion = ciudadano.getOcupacion();
+                int edadPaciente = ciudadano.getEdad();                    
+                String responsableLegal = ciudadano.getResponsableLegal();
+                boolean estado = ciudadano.isEstado();                    
 
-                    String edadString = String.valueOf(edadPaciente);
+                String edadString = String.valueOf(edadPaciente);
 
-                    // Muestra los datos en los campos de información
-                    JT_Apellido.setText(apellido);
-                    JT_Nombre.setText(nombre);
-                    JT_Celular.setText(celular);
-                    JT_Email.setText(email);
-                    JT_Patologia.setText(patologia);
-                    JT_Ocupacion.setText(ocupacion);
-                    JT_ResponsableLegal.setText(responsableLegal);
-                    JT_Edad.setText(edadString);
+                // Muestra los datos en los campos de información
+                JT_Apellido.setText(apellido);
+                JT_Nombre.setText(nombre);
+                JT_Celular.setText(celular);
+                JT_Email.setText(email);
+                JT_Patologia.setText(patologia);
+                JT_Ocupacion.setText(ocupacion);
+                JT_ResponsableLegal.setText(responsableLegal);
+                JT_Edad.setText(edadString);
 
-                    RB_EstadoPaciente.setVisible(true);
-                    RB_EstadoPaciente.setSelected(estado);
+                RB_EstadoPaciente.setVisible(true);
+                RB_EstadoPaciente.setSelected(estado);
 
-                    if (RB_EstadoPaciente.isSelected()) {
-                        Color verde = new Color(0, 204, 0);
-                        LB_EstadoPaciente.setText("Paciente activo");
-                        LB_EstadoPaciente.setForeground(verde);
-                    } else {
-                        Color rojo = new Color(210, 32, 32);
-                        LB_EstadoPaciente.setText("Paciente inactivo");
-                        LB_EstadoPaciente.setForeground(rojo);
-                    }
+                if (RB_EstadoPaciente.isSelected()) {
+                    Color verde = new Color(0, 204, 0);
+                    LB_EstadoPaciente.setText("Paciente activo");
+                    LB_EstadoPaciente.setForeground(verde);
+                } else {
+                    Color rojo = new Color(210, 32, 32);
+                    LB_EstadoPaciente.setText("Paciente inactivo");
+                    LB_EstadoPaciente.setForeground(rojo);
                 }
                 
             } catch (NullPointerException e) {
@@ -2059,6 +2057,7 @@ public class VacunarGUI extends javax.swing.JFrame {
         try {
             UIManager.setLookAndFeel(new FlatSolarizedLightIJTheme()); // Cambiar al tema diurno
             SwingUtilities.updateComponentTreeUI(VacunarGUI.this);
+             jTextArea1.setForeground(new java.awt.Color(0, 39, 113));//se le cambia color area si el tema es seleccinado
         } catch (UnsupportedLookAndFeelException ex) {
             ex.printStackTrace();
         }
