@@ -2058,6 +2058,22 @@ public class VacunarGUI extends javax.swing.JFrame {
             UIManager.setLookAndFeel(new FlatSolarizedLightIJTheme()); // Cambiar al tema diurno
             SwingUtilities.updateComponentTreeUI(VacunarGUI.this);
              jTextArea1.setForeground(new java.awt.Color(0, 39, 113));//se le cambia color area si el tema es seleccinado
+             IF_Consultas.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 240, 80));
+
+            JT_Consultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+            JT_Consultas.setForeground(new java.awt.Color(0, 39, 113));
+            JT_Consultas.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{
+                        {},
+                        {},
+                        {},
+                        {}
+                    },
+                    new String[]{}
+            ));
+            JC_Consultas.setForeground(new java.awt.Color(0, 255, 00));
+            JC_Consultas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"SELECCIONAR", "PACIENTES", "LABORATORIOS", "VACUNAS", "TURNOS"}));
+        
         } catch (UnsupportedLookAndFeelException ex) {
             ex.printStackTrace();
         }
@@ -2067,6 +2083,18 @@ public class VacunarGUI extends javax.swing.JFrame {
      
         try {
             UIManager.setLookAndFeel(new FlatCarbonIJTheme()); // Cambiar al tema diurno
+            jTextArea1.setForeground(new java.awt.Color(0, 255, 0));//se le cambia color area si el tema es seleccinado
+           JT_Consultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+            JT_Consultas.setForeground(new java.awt.Color(0, 255, 0));
+            JT_Consultas.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{
+                        {},
+                        {},
+                        {},
+                        {}
+                    },
+                    new String[]{}
+            ));
             SwingUtilities.updateComponentTreeUI(VacunarGUI.this);
         } catch (UnsupportedLookAndFeelException ex) {
             ex.printStackTrace();
